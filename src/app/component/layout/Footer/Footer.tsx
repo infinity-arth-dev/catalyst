@@ -10,6 +10,7 @@ const quickLinks = [
   { label: "Services", href: "/services" },
   { label: "Products", href: "/products" },
   { label: "Contact Us", href: "/contact-us" },
+  { label: "Terms & Conditions", href: "#" },
 ];
 
 const productList = [
@@ -129,8 +130,17 @@ export default function Footer() {
 
       {/* Slim Bottom Copyright Bar */}
       <div className="border-t border-white/10 py-4 text-xs">
-        <Container className="flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
-          <p>© 2022 Catalyst Biomedicals. All Rights Reserved.</p>
+        <Container className="flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-3 gap-y-1">
+            <p>© 2022 Catalyst Biomedicals. All Rights Reserved.</p>
+            <span className="hidden sm:inline text-brand-100/40">•</span>
+            <Link
+              href="#"
+              className="text-brand-100/90 hover:text-white transition-colors underline-offset-4 hover:underline"
+            >
+              Terms &amp; Conditions
+            </Link>
+          </div>
           <div className="flex items-center gap-4 text-brand-100/80">
             <a
               href="https://facebook.com"

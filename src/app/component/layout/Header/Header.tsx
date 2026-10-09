@@ -7,8 +7,7 @@ import { useState } from "react";
 import Container from "@/component/ui/Container";
 import { navigation } from "@/data/navigation";
 import { site } from "@/data/site";
-import { Phone, Mail, Menu, X, ChevronDown } from "lucide-react";
-import { FaFacebookF, FaTwitter, FaYoutube, FaLinkedinIn } from "react-icons/fa";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 export default function Header() {
   const pathname = usePathname();
@@ -29,59 +28,6 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-slate-200 bg-white">
-      {/* Top contact bar */}
-      <div className="hidden bg-brand-950 text-sm text-brand-100 md:block">
-        <Container className="flex items-center justify-between py-2">
-          <div className="flex items-center gap-6 text-xs">
-            <a href={site.phoneHref} className="flex items-center gap-1.5 hover:text-white transition-colors">
-              <Phone className="w-3.5 h-3.5 text-brand-600" />
-              <span>{site.phone}</span>
-            </a>
-            <a href={`mailto:${site.emails[0]}`} className="flex items-center gap-1.5 hover:text-white transition-colors">
-              <Mail className="w-3.5 h-3.5 text-brand-600" />
-              <span>{site.emails[0]}</span>
-            </a>
-          </div>
-          <div className="flex items-center gap-4 text-xs">
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Facebook"
-              className="text-brand-100 hover:text-white transition-colors"
-            >
-              <FaFacebookF className="w-3.5 h-3.5" />
-            </a>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Twitter"
-              className="text-brand-100 hover:text-white transition-colors"
-            >
-              <FaTwitter className="w-3.5 h-3.5" />
-            </a>
-            <a
-              href="https://youtube.com"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="YouTube"
-              className="text-brand-100 hover:text-white transition-colors"
-            >
-              <FaYoutube className="w-3.5 h-3.5" />
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="LinkedIn"
-              className="text-brand-100 hover:text-white transition-colors"
-            >
-              <FaLinkedinIn className="w-3.5 h-3.5" />
-            </a>
-          </div>
-        </Container>
-      </div>
 
       {/* Main bar */}
       <Container className="flex items-center justify-between py-4">
