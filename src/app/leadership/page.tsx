@@ -47,8 +47,8 @@ export default function LeadershipPage() {
               Leadership
             </h1>
             <div className="mt-3 flex items-center sm:justify-end gap-1.5">
-              <div className="h-1.5 w-16 rounded-full bg-accent-600" />
-              <div className="h-1.5 w-4 rounded-full bg-brand-600" />
+              <div className="h-1.5 w-16 rounded-full bg-brand-600" />
+              <div className="h-1.5 w-4 rounded-full bg-accent-600" />
             </div>
           </div>
         </Container>
@@ -61,12 +61,12 @@ export default function LeadershipPage() {
             <span className="text-xs uppercase font-bold tracking-widest text-accent-600">
               Executive Governance
             </span>
-            <h2 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">
+            <h2 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-black text-brand-600 tracking-tight leading-tight">
               Founders &amp; Directors
             </h2>
             <div className="mt-3.5 flex items-center justify-center gap-1.5">
-              <div className="h-1.5 w-16 rounded-full bg-accent-600" />
-              <div className="h-1.5 w-4 rounded-full bg-brand-600" />
+              <div className="h-1.5 w-16 rounded-full bg-brand-600" />
+              <div className="h-1.5 w-4 rounded-full bg-accent-600" />
             </div>
             <p className="mt-4 text-sm sm:text-base text-slate-600">
               Guided by decades of specialized experience in pharmaceutical, biomedical, and medical device ecosystems across India.
@@ -128,14 +128,14 @@ export default function LeadershipPage() {
                 </span>
 
                 {/* Founder Name & Title */}
-                <h3 className="text-2xl sm:text-3xl font-black text-accent-600 tracking-tight group-hover:text-accent-500 transition-colors">
+                <h3 className="text-2xl sm:text-3xl font-black text-brand-600 tracking-tight group-hover:text-brand-700 transition-colors">
                   Sagar Patel (Founder/Director)
                 </h3>
 
                 {/* Decorative Divider */}
                 <div className="mt-3 flex items-center justify-center gap-1.5">
-                  <div className="h-1 w-12 rounded-full bg-accent-600" />
-                  <div className="h-1 w-3 rounded-full bg-brand-600" />
+                  <div className="h-1 w-12 rounded-full bg-brand-600" />
+                  <div className="h-1 w-3 rounded-full bg-accent-600" />
                 </div>
               </div>
 
@@ -191,7 +191,7 @@ export default function LeadershipPage() {
                ══════════════════════════════════════════════════════ */}
             <div className="group relative flex flex-col rounded-3xl border border-slate-200/90 bg-white p-8 sm:p-12 shadow-md hover:shadow-2xl hover:shadow-brand-900/10 hover:border-brand-300 transition-all duration-500 hover:-translate-y-2 overflow-hidden">
               {/* Top Animated Brand Gradient Line */}
-              <div className="absolute top-0 inset-x-8 h-1.5 rounded-b-full bg-gradient-to-r from-accent-600 via-brand-600 to-accent-600 opacity-80 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute top-0 inset-x-8 h-1.5 rounded-b-full bg-accent-600 opacity-0 group-hover:opacity-100 transition-opacity" />
 
               {/* Watermark Quote Icon in Background */}
               <div className="absolute top-8 right-8 text-7xl font-serif text-slate-100 select-none pointer-events-none group-hover:text-accent-50 transition-colors">
@@ -235,14 +235,14 @@ export default function LeadershipPage() {
                 </span>
 
                 {/* Founder Name & Title */}
-                <h3 className="text-2xl sm:text-3xl font-black text-accent-600 tracking-tight group-hover:text-accent-500 transition-colors">
+                <h3 className="text-2xl sm:text-3xl font-black text-brand-600 tracking-tight group-hover:text-brand-700 transition-colors">
                   Nilesh Kelkar (Founder/Director)
                 </h3>
 
                 {/* Decorative Divider */}
                 <div className="mt-3 flex items-center justify-center gap-1.5">
-                  <div className="h-1 w-12 rounded-full bg-accent-600" />
-                  <div className="h-1 w-3 rounded-full bg-brand-600" />
+                  <div className="h-1 w-12 rounded-full bg-brand-600" />
+                  <div className="h-1 w-3 rounded-full bg-accent-600" />
                 </div>
               </div>
 

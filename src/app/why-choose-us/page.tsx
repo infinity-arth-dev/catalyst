@@ -47,8 +47,8 @@ export default function WhyChooseUsPage() {
               Why Choose Us
             </h1>
             <div className="mt-3 flex items-center sm:justify-end gap-1.5">
-              <div className="h-1.5 w-16 rounded-full bg-accent-600" />
-              <div className="h-1.5 w-4 rounded-full bg-brand-600" />
+              <div className="h-1.5 w-16 rounded-full bg-brand-600" />
+              <div className="h-1.5 w-4 rounded-full bg-accent-600" />
             </div>
           </div>
         </Container>
@@ -62,12 +62,12 @@ export default function WhyChooseUsPage() {
             <span className="text-xs uppercase font-bold tracking-widest text-accent-600">
               The Catalyst Advantage
             </span>
-            <h2 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">
+            <h2 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-black text-brand-600 tracking-tight leading-tight">
               Our Core Commitments
             </h2>
             <div className="mt-3.5 flex items-center justify-center gap-1.5">
-              <div className="h-1.5 w-16 rounded-full bg-accent-600" />
-              <div className="h-1.5 w-4 rounded-full bg-brand-600" />
+              <div className="h-1.5 w-16 rounded-full bg-brand-600" />
+              <div className="h-1.5 w-4 rounded-full bg-accent-600" />
             </div>
             <p className="mt-4 text-sm sm:text-base text-slate-600">
               Dedicated to delivering world-class medical equipment, proven clinical value, and exceptional service across India.
@@ -82,7 +82,7 @@ export default function WhyChooseUsPage() {
                  ══════════════════════════════════════════════════════ */}
               <div className="group relative flex flex-col rounded-3xl border border-slate-200/90 bg-white p-8 sm:p-11 shadow-md hover:shadow-2xl hover:shadow-brand-900/10 hover:border-brand-400 transition-all duration-500 hover:-translate-y-2 overflow-hidden">
                 {/* Top Border Accent Line */}
-                <div className="absolute top-0 inset-x-8 h-1.5 rounded-b-full bg-gradient-to-r from-brand-600 via-accent-600 to-brand-600 opacity-80 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute top-0 inset-x-8 h-1.5 rounded-b-full bg-accent-600 opacity-0 group-hover:opacity-100 transition-opacity" />
 
                 {/* Corner Watermark */}
                 <span className="absolute top-6 right-8 text-4xl sm:text-5xl font-black text-slate-100 group-hover:text-brand-50 transition-colors select-none">
@@ -103,7 +103,7 @@ export default function WhyChooseUsPage() {
                 </div>
 
                 {/* Exact Title */}
-                <h3 className="text-xl sm:text-2xl font-black text-accent-600 mb-4 group-hover:text-accent-500 transition-colors leading-snug">
+                <h3 className="text-xl sm:text-2xl font-black text-brand-600 mb-4 group-hover:text-brand-700 transition-colors leading-snug">
                   Over 15 Years of Experience in this Field
                 </h3>
 
@@ -125,9 +125,9 @@ export default function WhyChooseUsPage() {
               {/* ══════════════════════════════════════════════════════
                   CARD 2: Patient Centric Approach
                  ══════════════════════════════════════════════════════ */}
-              <div className="group relative flex flex-col rounded-3xl border border-slate-200/90 bg-white p-8 sm:p-11 shadow-md hover:shadow-2xl hover:shadow-brand-900/10 hover:border-accent-400 transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+              <div className="group relative flex flex-col rounded-3xl border border-slate-200/90 bg-white p-8 sm:p-11 shadow-md hover:shadow-2xl hover:shadow-brand-900/10 hover:border-brand-400 transition-all duration-500 hover:-translate-y-2 overflow-hidden">
                 {/* Top Border Accent Line */}
-                <div className="absolute top-0 inset-x-8 h-1.5 rounded-b-full bg-gradient-to-r from-accent-600 via-brand-600 to-accent-600 opacity-80 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute top-0 inset-x-8 h-1.5 rounded-b-full bg-accent-600 opacity-0 group-hover:opacity-100 transition-opacity" />
 
                 {/* Corner Watermark */}
                 <span className="absolute top-6 right-8 text-4xl sm:text-5xl font-black text-slate-100 group-hover:text-accent-50 transition-colors select-none">
@@ -148,7 +148,7 @@ export default function WhyChooseUsPage() {
                 </div>
 
                 {/* Exact Title */}
-                <h3 className="text-xl sm:text-2xl font-black text-accent-600 mb-4 group-hover:text-accent-500 transition-colors leading-snug">
+                <h3 className="text-xl sm:text-2xl font-black text-brand-600 mb-4 group-hover:text-brand-700 transition-colors leading-snug">
                   Patient Centric Approach
                 </h3>
 
@@ -174,7 +174,7 @@ export default function WhyChooseUsPage() {
                ══════════════════════════════════════════════════════ */}
             <div className="group relative rounded-3xl border border-slate-200/90 bg-white p-8 sm:p-12 shadow-md hover:shadow-2xl hover:shadow-brand-900/10 hover:border-brand-400 transition-all duration-500 hover:-translate-y-1.5 overflow-hidden text-center">
               {/* Top Accent Gradient Border */}
-              <div className="absolute top-0 inset-x-12 h-1.5 rounded-b-full bg-gradient-to-r from-brand-600 via-accent-600 to-brand-600 opacity-80 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute top-0 inset-x-12 h-1.5 rounded-b-full bg-accent-600 opacity-0 group-hover:opacity-100 transition-opacity" />
 
               {/* Watermark */}
               <span className="absolute top-6 right-8 text-4xl sm:text-5xl font-black text-slate-100 group-hover:text-brand-50 transition-colors select-none">
@@ -195,14 +195,14 @@ export default function WhyChooseUsPage() {
               </div>
 
               {/* Exact Title */}
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-accent-600 mb-4 group-hover:text-accent-500 transition-colors">
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-brand-600 mb-4 group-hover:text-brand-700 transition-colors">
                 Quality is our Business
               </h3>
 
               {/* Decorative Divider */}
               <div className="mx-auto mb-6 flex items-center justify-center gap-1.5">
-                <div className="h-1.5 w-14 rounded-full bg-accent-600" />
-                <div className="h-1.5 w-3.5 rounded-full bg-brand-600" />
+                <div className="h-1.5 w-14 rounded-full bg-brand-600" />
+                <div className="h-1.5 w-3.5 rounded-full bg-accent-600" />
               </div>
 
               {/* Exact Paragraph */}

@@ -37,16 +37,16 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
 
   return (
     <div className="group relative flex flex-col items-center text-center rounded-2xl border border-slate-200/90 bg-white p-7 shadow-sm hover:shadow-xl hover:shadow-brand-900/5 transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-300">
-      {/* Top accent bar visible on hover */}
-      <div className="absolute top-0 inset-x-8 h-1 rounded-b-full bg-gradient-to-r from-brand-600 via-accent-600 to-brand-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      {/* Top minimal accent bar on hover */}
+      <div className="absolute top-0 inset-x-12 h-1 rounded-b-full bg-accent-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
       {/* Icon Frame */}
-      <div className="w-16 h-16 rounded-2xl bg-brand-50 border border-brand-100 text-brand-600 flex items-center justify-center mb-5 group-hover:bg-brand-600 group-hover:text-white group-hover:scale-105 transition-all duration-300 shadow-sm">
+      <div className="w-16 h-16 rounded-2xl border border-brand-100 bg-brand-50 text-brand-600 flex items-center justify-center mb-5 group-hover:bg-brand-600 group-hover:text-white group-hover:scale-105 transition-all duration-300 shadow-sm">
         {icons[index % icons.length]}
       </div>
       
       {/* Title */}
-      <h3 className="text-base sm:text-lg font-bold text-accent-600 min-h-[3rem] flex items-center justify-center group-hover:text-accent-500 transition-colors">
+      <h3 className="text-base sm:text-lg font-bold text-slate-900 min-h-[3rem] flex items-center justify-center group-hover:text-brand-600 transition-colors">
         {service.title}
       </h3>
 
@@ -58,7 +58,7 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
       {/* Read More button/link */}
       <Link
         href="/services"
-        className="mt-6 inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-brand-600 hover:text-brand-700 transition-colors group/link"
+        className="mt-6 inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-brand-600 hover:text-accent-600 transition-colors group/link"
       >
         <span>Read More</span>
         <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-1" />

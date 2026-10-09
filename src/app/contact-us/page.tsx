@@ -45,8 +45,8 @@ export default function ContactUsPage() {
               Contact Us
             </h1>
             <div className="mt-3 flex items-center sm:justify-end gap-1.5">
-              <div className="h-1.5 w-16 rounded-full bg-accent-600" />
-              <div className="h-1.5 w-4 rounded-full bg-brand-600" />
+              <div className="h-1.5 w-16 rounded-full bg-brand-600" />
+              <div className="h-1.5 w-4 rounded-full bg-accent-600" />
             </div>
           </div>
         </Container>

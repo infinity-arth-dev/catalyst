@@ -30,14 +30,14 @@ export default function Header() {
     <header className="sticky top-0 z-40 border-b border-slate-200 bg-white">
 
       {/* Main bar */}
-      <Container className="flex items-center justify-between py-4">
+      <Container className="flex items-center justify-between py-2.5 sm:py-3">
         <Link href="/" className="flex items-center">
           <Image
             src="/images/logocatalyst.jpg"
             alt={site.name}
-            width={160}
-            height={40}
-            className="h-10 w-auto object-contain"
+            width={240}
+            height={75}
+            className="h-14 sm:h-16 md:h-[68px] w-auto object-contain"
             priority
           />
         </Link>

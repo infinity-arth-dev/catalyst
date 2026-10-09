@@ -62,14 +62,14 @@ export default function AboutSection() {
             </span>
 
             {/* Title */}
-            <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold text-brand-600 tracking-tight leading-tight">
               Catalyst Biomedicals
             </h2>
 
             {/* Decorative accent divider matching logo palette */}
             <div className="mt-4 flex items-center gap-1.5">
-              <div className="h-1.5 w-16 rounded-full bg-accent-600" />
-              <div className="h-1.5 w-4 rounded-full bg-brand-600" />
+              <div className="h-1.5 w-16 rounded-full bg-brand-600" />
+              <div className="h-1.5 w-4 rounded-full bg-accent-600" />
             </div>
 
             {/* Content paragraphs */}
@@ -86,7 +86,7 @@ export default function AboutSection() {
             <div className="mt-8">
               <Link
                 href="/about-us"
-                className="inline-flex items-center gap-2 font-bold text-brand-600 hover:text-brand-700 transition-colors group text-base py-1"
+                className="inline-flex items-center gap-2 rounded-xl bg-brand-600 px-6 py-3 font-semibold text-white hover:bg-brand-700 transition-colors shadow-sm shadow-brand-600/20 group text-sm sm:text-base"
               >
                 <span>Read More</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

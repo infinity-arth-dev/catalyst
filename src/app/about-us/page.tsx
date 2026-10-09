@@ -38,8 +38,8 @@ export default function AboutPage() {
               About Us
             </h1>
             <div className="mt-3 flex items-center sm:justify-end gap-1.5">
-              <div className="h-1.5 w-16 rounded-full bg-accent-600" />
-              <div className="h-1.5 w-4 rounded-full bg-brand-600" />
+              <div className="h-1.5 w-16 rounded-full bg-brand-600" />
+              <div className="h-1.5 w-4 rounded-full bg-accent-600" />
             </div>
           </div>
         </Container>
@@ -108,14 +108,14 @@ export default function AboutPage() {
                 Company Overview
               </span>
 
-              <h2 className="mt-2 text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+              <h2 className="mt-2 text-3xl sm:text-4xl font-black text-brand-600 tracking-tight leading-tight">
                 Catalyst Biomedicals
               </h2>
 
               {/* Accent divider matching logo palette */}
               <div className="mt-4 flex items-center gap-1.5">
-                <div className="h-1.5 w-16 rounded-full bg-accent-600" />
-                <div className="h-1.5 w-4 rounded-full bg-brand-600" />
+                <div className="h-1.5 w-16 rounded-full bg-brand-600" />
+                <div className="h-1.5 w-4 rounded-full bg-accent-600" />
               </div>
               
               <div className="mt-6 space-y-4">
@@ -172,13 +172,13 @@ export default function AboutPage() {
             <span className="text-xs uppercase font-bold tracking-widest text-accent-600">
               Our Core Purpose
             </span>
-            <h2 className="mt-2 text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+            <h2 className="mt-2 text-3xl sm:text-4xl font-black text-brand-600 tracking-tight leading-tight">
               Vision &amp; Mission
             </h2>
             {/* Centered accent divider matching logo palette */}
             <div className="mt-3 flex items-center justify-center gap-1.5">
-              <div className="h-1.5 w-16 rounded-full bg-accent-600" />
-              <div className="h-1.5 w-4 rounded-full bg-brand-600" />
+              <div className="h-1.5 w-16 rounded-full bg-brand-600" />
+              <div className="h-1.5 w-4 rounded-full bg-accent-600" />
             </div>
           </div>
 
@@ -186,7 +186,7 @@ export default function AboutPage() {
             {/* Vision Card */}
             <div className="group relative flex flex-col overflow-hidden rounded-3xl bg-white border border-slate-200/90 shadow-md hover:shadow-2xl hover:shadow-brand-900/10 hover:border-brand-400 transition-all duration-500 hover:-translate-y-2">
               {/* Top border glow on hover */}
-              <div className="absolute top-0 inset-x-8 h-1 rounded-b-full bg-gradient-to-r from-brand-600 to-accent-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+              <div className="absolute top-0 inset-x-8 h-1 rounded-b-full bg-accent-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
 
               {/* Realistic Vision Image Frame */}
               <div className="relative aspect-[16/9] w-full bg-slate-100 overflow-hidden">
@@ -212,7 +212,7 @@ export default function AboutPage() {
 
               {/* Content Area */}
               <div className="p-8 sm:p-10 flex flex-col items-center text-center flex-1">
-                <h3 className="text-2xl sm:text-3xl font-black text-accent-600 mb-4 group-hover:text-accent-500 transition-colors">
+                <h3 className="text-2xl sm:text-3xl font-black text-slate-900 mb-4 group-hover:text-brand-600 transition-colors">
                   Vision
                 </h3>
                 <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
@@ -222,9 +222,9 @@ export default function AboutPage() {
             </div>
 
             {/* Mission Card */}
-            <div className="group relative flex flex-col overflow-hidden rounded-3xl bg-white border border-slate-200/90 shadow-md hover:shadow-2xl hover:shadow-brand-900/10 hover:border-accent-400 transition-all duration-500 hover:-translate-y-2">
+            <div className="group relative flex flex-col overflow-hidden rounded-3xl bg-white border border-slate-200/90 shadow-md hover:shadow-2xl hover:shadow-brand-900/10 hover:border-brand-400 transition-all duration-500 hover:-translate-y-2">
               {/* Top border glow on hover */}
-              <div className="absolute top-0 inset-x-8 h-1 rounded-b-full bg-gradient-to-r from-accent-600 to-brand-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+              <div className="absolute top-0 inset-x-8 h-1 rounded-b-full bg-accent-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
 
               {/* Realistic Mission Image Frame */}
               <div className="relative aspect-[16/9] w-full bg-slate-100 overflow-hidden">
@@ -250,7 +250,7 @@ export default function AboutPage() {
 
               {/* Content Area */}
               <div className="p-8 sm:p-10 flex flex-col items-center text-center flex-1">
-                <h3 className="text-2xl sm:text-3xl font-black text-accent-600 mb-4 group-hover:text-accent-500 transition-colors">
+                <h3 className="text-2xl sm:text-3xl font-black text-slate-900 mb-4 group-hover:text-brand-600 transition-colors">
                   Mission
                 </h3>
                 <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
@@ -269,12 +269,12 @@ export default function AboutPage() {
             <span className="text-xs uppercase font-bold tracking-widest text-accent-600">
               Explore Our Organization
             </span>
-            <h2 className="mt-2 text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 tracking-tight">
+            <h2 className="mt-2 text-2xl sm:text-3xl lg:text-4xl font-black text-brand-600 tracking-tight leading-tight">
               Learn More About Catalyst Biomedicals
             </h2>
             <div className="mt-3 flex items-center justify-center gap-1.5">
-              <div className="h-1.5 w-14 rounded-full bg-accent-600" />
-              <div className="h-1.5 w-3 rounded-full bg-brand-600" />
+              <div className="h-1.5 w-14 rounded-full bg-brand-600" />
+              <div className="h-1.5 w-3 rounded-full bg-accent-600" />
             </div>
           </div>
 
@@ -304,20 +304,20 @@ export default function AboutPage() {
             {/* Why Choose Us Card */}
             <Link
               href="/why-choose-us"
-              className="group relative flex flex-col justify-between rounded-3xl border border-slate-200/90 bg-slate-50/60 p-8 sm:p-10 hover:bg-white hover:border-accent-400 hover:shadow-2xl hover:shadow-brand-900/10 transition-all duration-300 hover:-translate-y-1.5"
+              className="group relative flex flex-col justify-between rounded-3xl border border-slate-200/90 bg-slate-50/60 p-8 sm:p-10 hover:bg-white hover:border-brand-400 hover:shadow-2xl hover:shadow-brand-900/10 transition-all duration-300 hover:-translate-y-1.5"
             >
               <div>
                 <div className="w-14 h-14 rounded-2xl bg-accent-50 text-accent-600 border border-accent-100 flex items-center justify-center mb-6 group-hover:bg-accent-600 group-hover:text-white transition-all duration-300 shadow-xs">
                   <ShieldCheck className="w-7 h-7" />
                 </div>
-                <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-2 group-hover:text-accent-600 transition-colors">
+                <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">
                   Why Choose Us
                 </h3>
                 <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
                   Learn about our 6 core pillars of excellence: world-class brand portfolio, 24/7 technical support, loaner equipment, and pan-India logistics networks.
                 </p>
               </div>
-              <div className="mt-6 flex items-center gap-2 text-sm font-bold text-accent-600 group-hover:text-accent-500">
+              <div className="mt-6 flex items-center gap-2 text-sm font-bold text-accent-600 group-hover:text-accent-700">
                 <span>Discover Our Strengths</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1.5" />
               </div>

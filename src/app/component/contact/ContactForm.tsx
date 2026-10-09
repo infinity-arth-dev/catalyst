@@ -34,16 +34,16 @@ export default function ContactForm() {
   return (
     <div className="rounded-3xl border border-slate-200/90 bg-white p-7 sm:p-10 shadow-lg shadow-brand-950/5">
       <div className="text-center mb-8">
-        <span className="text-xs uppercase font-bold tracking-widest text-brand-700">
+        <span className="text-xs uppercase font-bold tracking-widest text-accent-600">
           Get In Touch
         </span>
-        <h3 className="text-2xl sm:text-3xl font-black text-slate-900 mt-1">
+        <h3 className="text-2xl sm:text-3xl font-black text-brand-600 mt-1">
           Connect With Us
         </h3>
         {/* Centered accent divider */}
         <div className="mt-2.5 flex items-center justify-center gap-1.5">
-          <div className="h-1.5 w-12 rounded-full bg-accent-600" />
-          <div className="h-1.5 w-3 rounded-full bg-brand-600" />
+          <div className="h-1.5 w-12 rounded-full bg-brand-600" />
+          <div className="h-1.5 w-3 rounded-full bg-accent-600" />
         </div>
       </div>
 
