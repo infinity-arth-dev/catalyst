@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+/* Brand tokens derived from Catalyst Biomedicals logo
+   Primary  → Cyan Blue  #00AEEF  (logo text + figure)
+   Accent   → Orange-Red #E8502A  (logo figure accent)
+   Use as: bg-brand-900, text-brand-600, bg-accent-600, etc.
+*/
+@theme {
+  /* ── Cyan Blue (Primary) ── */
+  --color-brand-950: #001F2E;
+  --color-brand-900: #003A55;
+  --color-brand-800: #005A7A;
+  --color-brand-700: #0089B0;
+  --color-brand-600: #00AEEF;
+  --color-brand-100: #CCE9F7;
+  --color-brand-50: #E5F4FC;
+
+  /* ── Orange-Red (Accent) ── */
+  --color-accent-600: #E8502A;
+  --color-accent-500: #EF6B44;
+  --color-accent-100: #FDDDD6;
+  --color-accent-50: #FEF0EC;
+
+  --font-sans: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #1a2b35;
+  background: #ffffff;
+}
+
+/* Custom Keyframe Animations for Rich UI Experience */
+@keyframes float-slow {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes float-reverse {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.65;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-float {
+  animation: float-slow 4s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 4.5s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 6s ease-in-out infinite;
+}
