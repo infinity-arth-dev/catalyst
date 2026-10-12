@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Container from "@/component/ui/Container";
 import PartnersSection from "@/component/home/PartnersSection";
-
+//
 interface ProductPartnerItem {
   subtitle: string;
   partnerName: string;
