@@ -6,22 +6,50 @@
    Use as: bg-brand-900, text-brand-600, bg-accent-600, etc.
 */
 @theme {
-  /* ── Cyan Blue (Primary) ── */
-  --color-brand-950: #001F2E;
-  --color-brand-900: #003A55;
-  --color-brand-800: #005A7A;
-  --color-brand-700: #0089B0;
+  /* ── Catalyst Logo Brand Color Tokens (Exact Logo Icon Blue: #00AEEF) ── */
   --color-brand-600: #00AEEF;
-  --color-brand-100: #CCE9F7;
-  --color-brand-50: #E5F4FC;
+  --color-brand-500: #29bbf4;
+  --color-brand-400: #57caf6;
+  --color-brand-700: #00AEEF;
+  --color-brand-800: #00AEEF;
+  --color-brand-900: #0077a3;
+  --color-brand-950: #071B33;
+  --color-brand-100: #d8f2fd;
+  --color-brand-50: #eef9fe;
 
-  /* ── Orange-Red (Accent) ── */
+  /* Cyan matching logo blue */
+  --color-cyan-600: #00AEEF;
+  --color-cyan-500: #29bbf4;
+  --color-cyan-400: #57caf6;
+  --color-cyan-700: #00AEEF;
+  --color-cyan-100: #d8f2fd;
+  --color-cyan-50: #eef9fe;
+
+  /* Cinematic Navy */
+  --color-navy-950: #071B33;
+  --color-navy-900: #0b223d;
+  --color-navy-800: #123C61;
+
+  /* Soft Neutrals & Clinical White */
+  --color-ice-100: #EAF5F8;
+  --color-ice-50: #F4F7FA;
+  --color-neutral-border: #DCE6EE;
+
+  /* Accent (Orange-Red from logo) */
   --color-accent-600: #E8502A;
   --color-accent-500: #EF6B44;
   --color-accent-100: #FDDDD6;
   --color-accent-50: #FEF0EC;
 
-  --font-sans: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+    color: #00AEEF;
+  }
 }
 
 html {
@@ -204,6 +232,19 @@ body {
   }
 }
 
+@keyframes subtle-zoom {
+  0%, 100% {
+    transform: scale(1.03);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+.animate-subtle-zoom {
+  animation: subtle-zoom 14s ease-in-out infinite;
+}
+
 @keyframes pan-horizontal {
   0% {
     background-position: 0 0;
@@ -325,4 +366,84 @@ body {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* ── Medical Tech Grid & Scanning Animations ── */
+.bg-grid-medical {
+  background-image: 
+    linear-gradient(to right, rgba(0, 174, 239, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 174, 239, 0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.bg-dots-medical {
+  background-image: radial-gradient(rgba(0, 174, 239, 0.15) 1.2px, transparent 1.2px);
+  background-size: 20px 20px;
+}
+
+@keyframes laserScan {
+  0% {
+    top: -2%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    top: 102%;
+    opacity: 0;
+  }
+}
+
+.animate-laser-scan {
+  animation: laserScan 3.2s ease-in-out infinite;
+}
+
+@keyframes ecgLine {
+  0% {
+    stroke-dashoffset: 400;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-ecg-line {
+  stroke-dasharray: 200;
+  animation: ecgLine 2.2s linear infinite;
+}
+
+@keyframes pulseGlowRing {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+}
+
+.animate-glow-ring {
+  animation: pulseGlowRing 3s ease-in-out infinite;
+}
+
+@keyframes radarSweep {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-radar-sweep {
+  animation: radarSweep 8s linear infinite;
 }

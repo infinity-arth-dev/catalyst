@@ -9,14 +9,14 @@ export default function ContactInfo() {
           <MapPin className="h-6 w-6" />
         </div>
         <div className="text-xs sm:text-sm leading-relaxed text-slate-700">
-          <h3 className="font-extrabold text-slate-900 mb-1.5 text-base group-hover:text-brand-600 transition-colors">
+          <h3 className="font-extrabold text-brand-700 mb-1.5 text-base group-hover:text-brand-600 transition-colors">
             Catalyst Biomedicals
           </h3>
           <p>Office No.1, &quot;Swastishree&quot;,</p>
           <p>Shree varshanand Soc. Hingne Khurd,</p>
           <p>Anand Nagar, Near Santosh Hall,</p>
           <p>Behind Jagtap Hospital, Sinhagad Road,</p>
-          <p className="font-semibold text-slate-900">Pune 411 051. Maharashtra, India.</p>
+          <p className="font-semibold text-brand-800">Pune 411 051. Maharashtra, India.</p>
         </div>
       </div>
 
@@ -26,7 +26,7 @@ export default function ContactInfo() {
           <Mail className="h-6 w-6" />
         </div>
         <div className="text-xs sm:text-sm text-slate-700 space-y-1.5">
-          <p className="font-bold text-slate-900 text-sm">Official Email Inquiries</p>
+          <p className="font-bold text-brand-700 text-sm">Official Email Inquiries</p>
           <p>
             <a
               href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@catalystbiomedicals.com&su=Inquiry%20-%20Catalyst%20Biomedicals"
