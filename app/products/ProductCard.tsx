@@ -37,14 +37,14 @@ export default function ProductCard({ segment }: { segment: ProductCategoryDetai
 
       {/* Content */}
       <div className="flex flex-col flex-1 p-6 sm:p-7">
-        <h3 className="text-xl sm:text-2xl font-black text-accent-600 tracking-tight group-hover:text-accent-500 transition-colors">
+        <h3 className="text-xl sm:text-2xl font-black text-brand-600 tracking-tight group-hover:text-brand-500 transition-colors">
           {segment.name}
         </h3>
 
-        {/* Divider */}
+        {/* Divider matching logo palette */}
         <div className="mt-2.5 mb-3 flex items-center gap-1.5">
-          <div className="h-1 w-10 rounded-full bg-accent-600 group-hover:w-14 transition-all duration-300" />
-          <div className="h-1 w-2.5 rounded-full bg-brand-600" />
+          <div className="h-1 w-10 rounded-full bg-brand-600 group-hover:w-14 transition-all duration-300" />
+          <div className="h-1 w-2.5 rounded-full bg-accent-600" />
         </div>
 
         {segment.tagline && (

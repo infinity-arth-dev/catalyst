@@ -4,49 +4,19 @@ import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Container from "../../component/ui/Container";
 import AnimatedSection from "../../component/ui/AnimatedSection";
-import { ChevronLeft, ChevronRight, Handshake } from "lucide-react";
+import { ChevronLeft, ChevronRight, Handshake, Sparkles } from "lucide-react";
 
 const partners = [
-  {
-    name: "ADAPTIVE",
-    image: "/partners/adaptive.jpg",
-  },
-  {
-    name: "Smith+Nephew",
-    image: "/partners/smithnephew-img.jpg",
-  },
-  {
-    name: "VSY BIOTECHNOLOGY",
-    image: "/partners/vsybio.jpg",
-  },
-  {
-    name: "Rusan",
-    image: "/partners/rusan.jpg",
-  },
-  {
-    name: "Nuvigen",
-    image: "/partners/nuvigen.jpg",
-  },
-  {
-    name: "Dentsply Sirona",
-    image: "/partners/dentsply.jpg",
-  },
-  {
-    name: "CardinalHealth",
-    image: "/partners/cardinalhealth.jpg",
-  },
-  {
-    name: "LivaNova",
-    image: "/partners/livanova.jpg",
-  },
-  {
-    name: "ChemoTech",
-    image: "/partners/chemotech.jpg",
-  },
-  {
-    name: "BioLine",
-    image: "/partners/bioline.jpg",
-  },
+  { name: "ADAPTIVE", image: "/partners/adaptive.jpg" },
+  { name: "Smith+Nephew", image: "/partners/smithnephew-img.jpg" },
+  { name: "VSY BIOTECHNOLOGY", image: "/partners/vsybio.jpg" },
+  { name: "Rusan", image: "/partners/rusan.jpg" },
+  { name: "Nuvigen", image: "/partners/nuvigen.jpg" },
+  { name: "Dentsply Sirona", image: "/partners/dentsply.jpg" },
+  { name: "CardinalHealth", image: "/partners/cardinalhealth.jpg" },
+  { name: "LivaNova", image: "/partners/livanova.jpg" },
+  { name: "ChemoTech", image: "/partners/chemotech.jpg" },
+  { name: "BioLine", image: "/partners/bioline.jpg" },
 ];
 
 export default function PartnersSection() {
@@ -73,11 +43,12 @@ export default function PartnersSection() {
     return () => window.removeEventListener("resize", checkScroll);
   }, []);
 
-  // Auto-scroll effect: advances every 2.8s, loops back when reaching the end
+  // Blueprint marquee auto-scroll effect: pause on hover & when tab is hidden
   useEffect(() => {
     if (isPaused) return;
 
     const interval = setInterval(() => {
+      if (document.hidden) return;
       if (!scrollRef.current) return;
       const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
 
@@ -86,7 +57,7 @@ export default function PartnersSection() {
       } else {
         scrollRef.current.scrollBy({ left: 240, behavior: "smooth" });
       }
-    }, 2800);
+    }, 3200);
 
     return () => clearInterval(interval);
   }, [isPaused]);
@@ -110,19 +81,23 @@ export default function PartnersSection() {
   };
 
   return (
-    <section className="relative py-16 sm:py-24 bg-white border-t border-slate-200/70 overflow-hidden">
+    <section id="partners" className="relative py-16 sm:py-24 bg-white border-t border-[#DCE6EE] overflow-hidden">
       {/* Background ambient accents */}
-      <div className="absolute top-1/2 right-0 w-80 h-80 bg-brand-50/60 rounded-full blur-3xl pointer-events-none -translate-y-1/2 animate-pulse-glow" />
+      <div className="absolute top-1/2 right-0 w-80 h-80 bg-[#00AEEF]/5 rounded-full blur-3xl pointer-events-none -translate-y-1/2" />
 
       <Container>
+        {/* Blueprint Section 07 Header */}
         <AnimatedSection animation="fade-up" className="text-center mb-12 sm:mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 border border-brand-100 text-brand-700 text-xs font-bold uppercase tracking-widest mb-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 border border-brand-200/80 text-brand-700 text-xs font-extrabold uppercase tracking-widest mb-3">
             <Handshake className="w-3.5 h-3.5 text-accent-600" />
-            <span>Trusted Collaborations</span>
+            <span>Global OEM Network</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-black text-brand-600 tracking-tight leading-tight">
-            Our Global Partners
+            Working with Trusted Technology Partners
           </h2>
+          <p className="mt-2.5 text-sm sm:text-base text-slate-600 max-w-xl mx-auto">
+            Collaborating with world-leading medical device innovators to deliver validated healthcare excellence across India.
+          </p>
           {/* Centered accent divider matching logo palette */}
           <div className="mt-3.5 flex items-center justify-center gap-1.5">
             <div className="h-1.5 w-16 rounded-full bg-brand-600" />
@@ -141,33 +116,33 @@ export default function PartnersSection() {
               onClick={() => scroll("left")}
               disabled={!canScrollLeft}
               aria-label="Previous partners"
-              className="hidden sm:flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition-all duration-300 hover:border-brand-600 hover:text-brand-600 hover:bg-brand-50 hover:shadow-lg disabled:opacity-20 disabled:cursor-not-allowed z-10 mr-3 cursor-pointer hover:scale-110 active:scale-95"
+              className="hidden sm:flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#DCE6EE] bg-white text-slate-700 shadow-2xs transition-all duration-200 hover:border-[#00AEEF] hover:text-[#00AEEF] hover:bg-[#EAF5F8] disabled:opacity-20 disabled:cursor-not-allowed z-10 mr-3 cursor-pointer hover:scale-105 active:scale-95"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
 
-            {/* Scrollable Container with Logo Cards */}
+            {/* Scrollable Container with Partner Logo Cards */}
             <div
               ref={scrollRef}
               onScroll={checkScroll}
-              className="flex w-full gap-5 overflow-x-auto py-5 px-1 scroll-smooth snap-x snap-mandatory scrollbar-none [scrollbar-width:none] [-ms-overflow-style:none]"
+              className="flex w-full gap-5 overflow-x-auto py-4 px-1 scroll-smooth snap-x snap-mandatory scrollbar-none [scrollbar-width:none] [-ms-overflow-style:none]"
             >
               {partners.map((p, idx) => (
                 <div
                   key={p.name}
-                  className="group flex-none w-[200px] sm:w-[220px] md:w-[230px] h-24 sm:h-28 rounded-2xl border border-slate-200/90 bg-white p-3.5 shadow-xs hover:shadow-xl hover:shadow-brand-900/10 hover:border-brand-500 hover:-translate-y-1.5 transition-all duration-300 snap-start flex items-center justify-center cursor-pointer select-none relative overflow-hidden"
+                  className="group flex-none w-[190px] sm:w-[210px] md:w-[220px] h-24 sm:h-26 rounded-2xl border border-[#DCE6EE] bg-white p-4 shadow-2xs hover:shadow-lg hover:border-[#00AEEF]/60 hover:-translate-y-1 transition-all duration-300 snap-start flex items-center justify-center cursor-pointer select-none relative overflow-hidden"
                   onClick={() => scrollToIndex(idx)}
                 >
-                  {/* Subtle top indicator on hover */}
-                  <div className="absolute top-0 inset-x-8 h-1 rounded-b-full bg-gradient-to-r from-brand-600 to-accent-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  {/* Subtle top indicator on hover matching logo */}
+                  <div className="absolute top-0 inset-x-8 h-1 rounded-b-full bg-gradient-to-r from-brand-600 via-accent-600 to-brand-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                   <div className="relative w-full h-full flex items-center justify-center">
                     <Image
                       src={p.image}
                       alt={p.name}
                       fill
-                      sizes="240px"
-                      className="object-contain p-2.5 transition-transform duration-300 group-hover:scale-110"
+                      sizes="220px"
+                      className="object-contain p-2 transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
                 </div>
@@ -179,23 +154,23 @@ export default function PartnersSection() {
               onClick={() => scroll("right")}
               disabled={!canScrollRight}
               aria-label="Next partners"
-              className="hidden sm:flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition-all duration-300 hover:border-brand-600 hover:text-brand-600 hover:bg-brand-50 hover:shadow-lg disabled:opacity-20 disabled:cursor-not-allowed z-10 ml-3 cursor-pointer hover:scale-110 active:scale-95"
+              className="hidden sm:flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#DCE6EE] bg-white text-slate-700 shadow-2xs transition-all duration-200 hover:border-[#00AEEF] hover:text-[#00AEEF] hover:bg-[#EAF5F8] disabled:opacity-20 disabled:cursor-not-allowed z-10 ml-3 cursor-pointer hover:scale-105 active:scale-95"
             >
               <ChevronRight className="w-5 h-5" />
             </button>
           </div>
 
           {/* Navigation Indicator Dots */}
-          <div className="flex justify-center items-center gap-2 mt-8">
+          <div className="flex justify-center items-center gap-1.5 mt-7">
             {partners.map((_, i) => (
               <button
                 key={i}
                 onClick={() => scrollToIndex(i)}
                 aria-label={`Go to partner ${i + 1}`}
-                className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
                   i === activeIndex
-                    ? "w-8 bg-brand-600 shadow-xs shadow-brand-600/40"
-                    : "w-2 bg-slate-300 hover:bg-slate-400 hover:w-3"
+                    ? "w-7 bg-gradient-to-r from-brand-600 to-accent-600"
+                    : "w-1.5 bg-slate-300 hover:bg-slate-400 hover:w-2.5"
                 }`}
               />
             ))}

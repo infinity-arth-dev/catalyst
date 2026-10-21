@@ -79,7 +79,7 @@ export default function NetworkBackgroundCanvas({
       pingAlpha: number;
     }
 
-    const colors = ["#00AEEF", "#0089B0", "#E8502A", "#FFFFFF"];
+    const colors = ["#00AEEF", "#29bbf4", "#E8502A", "#FFFFFF"];
     const nodes: Node[] = [];
 
     for (let i = 0; i < nodeCount; i++) {
