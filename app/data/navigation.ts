@@ -11,5 +11,6 @@ export const navigation: NavItem[] = [
   },
   { label: "Services", href: "/services" },
   { label: "Products", href: "/products" },
+  { label: "Careers", href: "/careers" },
   { label: "Contact Us", href: "/contact-us" },
 ];
