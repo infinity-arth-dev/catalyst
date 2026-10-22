@@ -10,6 +10,7 @@ const quickLinks = [
   { label: "Leadership Team", href: "/leadership" },
   { label: "Why Choose Us", href: "/why-choose-us" },
   { label: "Our Services", href: "/services" },
+  { label: "Careers", href: "/careers" },
   { label: "Contact Us", href: "/contact-us" },
 ];
 

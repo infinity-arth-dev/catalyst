@@ -16,8 +16,6 @@ export default function Header() {
   const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState<string | null>("Products");
   const navRef = useRef<HTMLElement | null>(null);
 
-  const isHomePage = pathname === "/";
-  const isTransparent = isHomePage && !scrolled;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,23 +66,13 @@ export default function Header() {
   };
 
   return (
-    <header
-      className={`sticky top-0 z-50 transition-all duration-250 ease-out ${
-        isTransparent
-          ? "bg-gradient-to-b from-[#071B33]/85 via-[#071B33]/45 to-transparent border-b border-transparent py-3 sm:py-4"
-          : "bg-white/95 backdrop-blur-md shadow-md border-b border-[#DCE6EE] py-2 sm:py-2.5"
-      }`}
-    >
+    <header className="sticky top-0 z-50 transition-all duration-250 ease-out bg-white/95 backdrop-blur-md shadow-md border-b border-[#DCE6EE] py-2 sm:py-2.5">
       {/* Main bar */}
       <Container className="flex items-center justify-between gap-4">
         {/* Brand Logo */}
         <Link
           href="/"
-          className={`flex items-center group transition-transform duration-300 hover:scale-[1.02] ${
-            isTransparent
-              ? "bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-xl shadow-md border border-white/20"
-              : ""
-          }`}
+          className="flex items-center group transition-transform duration-300 hover:scale-[1.02]"
         >
           <Image
             src="/images/logocatalyst.jpg"
@@ -124,11 +112,7 @@ export default function Header() {
                         )
                       }
                       className={`group font-semibold py-2 transition-all flex items-center gap-1 cursor-pointer relative text-sm ${
-                        isTransparent
-                          ? parentActive
-                            ? "text-[#00AEEF] font-bold"
-                            : "text-white/90 hover:text-[#00AEEF]"
-                          : parentActive
+                        parentActive
                           ? "text-[#00AEEF] font-bold"
                           : "text-[#00AEEF]/85 hover:text-[#00AEEF]"
                       }`}
@@ -140,8 +124,6 @@ export default function Header() {
                         className={`w-4 h-4 transition-transform duration-150 ${
                           isDropdownVisible
                             ? "rotate-180 text-[#00AEEF]"
-                            : isTransparent
-                            ? "text-white/70 group-hover:text-[#00AEEF]"
                             : "text-[#00AEEF]/70 group-hover:text-[#00AEEF]"
                         }`}
                       />
@@ -231,11 +213,7 @@ export default function Header() {
                   <Link
                     href={item.href}
                     className={`group font-semibold py-2 transition-all relative text-sm ${
-                      isTransparent
-                        ? isActive(item.href)
-                          ? "text-[#00AEEF] font-bold"
-                          : "text-white/90 hover:text-[#00AEEF]"
-                        : isActive(item.href)
+                      isActive(item.href)
                         ? "text-[#00AEEF] font-bold"
                         : "text-[#00AEEF]/85 hover:text-[#00AEEF]"
                     }`}
@@ -254,15 +232,10 @@ export default function Header() {
 
         {/* Action Button & Mobile Menu Trigger */}
         <div className="flex items-center gap-3">
-
           {/* Mobile menu trigger */}
           <button
             type="button"
-            className={`rounded-xl p-2.5 lg:hidden transition-all duration-200 active:scale-90 ${
-              isTransparent
-                ? "text-white bg-white/10 hover:bg-white/20"
-                : "text-[#00AEEF] hover:bg-[#EAF5F8]/50"
-            }`}
+            className="rounded-xl p-2.5 lg:hidden transition-all duration-200 active:scale-90 text-[#00AEEF] hover:bg-[#EAF5F8]/50"
             aria-expanded={open}
             aria-controls="mobile-menu-drawer"
             aria-label="Toggle navigation menu"
