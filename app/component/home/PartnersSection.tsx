@@ -88,20 +88,21 @@ export default function PartnersSection() {
       <Container>
         {/* Blueprint Section 07 Header */}
         <AnimatedSection animation="fade-up" className="text-center mb-12 sm:mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 border border-brand-200/80 text-brand-700 text-xs font-extrabold uppercase tracking-widest mb-3">
-            <Handshake className="w-3.5 h-3.5 text-accent-600" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200/80 text-[#E8502A] text-xs font-extrabold uppercase tracking-widest mb-3 shadow-xs">
+            <Handshake className="w-3.5 h-3.5 text-[#E8502A] animate-spin-slow" />
             <span>Global OEM Network</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black text-brand-600 tracking-tight leading-tight">
-            Working with Trusted Technology Partners
+          <h2 className="text-3xl sm:text-4xl font-black tracking-tight leading-tight">
+            <span className="text-[#00AEEF]">Working with Trusted</span>{" "}
+            <span className="text-[#E8502A]">Technology Partners</span>
           </h2>
           <p className="mt-2.5 text-sm sm:text-base text-slate-600 max-w-xl mx-auto">
             Collaborating with world-leading medical device innovators to deliver validated healthcare excellence across India.
           </p>
           {/* Centered accent divider matching logo palette */}
           <div className="mt-3.5 flex items-center justify-center gap-1.5">
-            <div className="h-1.5 w-16 rounded-full bg-brand-600" />
-            <div className="h-1.5 w-4 rounded-full bg-accent-600" />
+            <div className="h-1.5 w-16 rounded-full bg-[#00AEEF]" />
+            <div className="h-1.5 w-4 rounded-full bg-[#E8502A]" />
           </div>
         </AnimatedSection>
 

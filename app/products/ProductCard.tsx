@@ -9,7 +9,7 @@ export default function ProductCard({ segment }: { segment: ProductCategoryDetai
   return (
     <Link
       href={`/products/${segment.slug}`}
-      className="group relative flex flex-col overflow-hidden rounded-3xl border border-slate-200/90 bg-white shadow-xs hover:shadow-2xl hover:shadow-brand-900/10 hover:border-brand-400 transition-all duration-500 hover:-translate-y-2"
+      className="group relative flex flex-col overflow-hidden rounded-3xl border border-slate-200/90 bg-white shadow-xs card-lift-glow transition-all duration-500"
     >
       {/* Top accent gradient bar on hover */}
       <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-brand-600 via-accent-600 to-brand-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />

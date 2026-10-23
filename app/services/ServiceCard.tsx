@@ -39,13 +39,13 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
 
   return (
     <div
-      className="group relative flex flex-col items-center text-center rounded-3xl border border-slate-200/90 bg-white p-8 shadow-xs hover:shadow-2xl hover:shadow-brand-900/10 transition-all duration-500 hover:-translate-y-2 hover:border-brand-400 overflow-hidden h-full"
+      className="group relative flex flex-col items-center text-center rounded-3xl border border-slate-200/90 bg-white p-8 shadow-xs card-lift-glow transition-all duration-500 overflow-hidden h-full"
       style={{
         transitionDelay: `${index * 50}ms`,
       }}
     >
       {/* Top dynamic gradient accent line expanding on hover */}
-      <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-brand-600 via-accent-600 to-brand-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-[#00AEEF] via-[#E8502A] to-[#00AEEF] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
       {/* Decorative ambient background glow on hover */}
       <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-brand-500/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -55,8 +55,8 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
         {icons[index % icons.length]}
       </div>
 
-      {/* Title */}
-      <h3 className="text-lg font-bold text-slate-900 min-h-[3rem] flex items-center justify-center group-hover:text-brand-600 transition-colors duration-200">
+      {/* Title - Logo themed cyan/blue & orange on hover */}
+      <h3 className="text-lg font-black text-[#00AEEF] min-h-[3rem] flex items-center justify-center group-hover:text-[#E8502A] transition-colors duration-200">
         {service.title}
       </h3>
 

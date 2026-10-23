@@ -56,14 +56,15 @@ export default async function ProductDetailPage({ params }: Props) {
       {/* ── Bottom Section with Clear Back to Products CTA ── */}
       <section className="bg-slate-50 border-t border-slate-200/90 py-12 sm:py-16">
         <Container>
-          <div className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200/90 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200/90 shadow-sm card-lift-glow flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
-              <span className="inline-flex items-center gap-1.5 text-xs uppercase font-extrabold tracking-widest text-brand-600 bg-brand-50 px-3 py-1 rounded-full border border-brand-100">
+              <span className="inline-flex items-center gap-1.5 text-xs uppercase font-extrabold tracking-widest text-[#00AEEF] bg-sky-50 px-3 py-1 rounded-full border border-sky-200">
                 <LayoutGrid className="w-3.5 h-3.5" />
                 Catalyst Healthcare Portfolio
               </span>
-              <h3 className="text-xl sm:text-2xl font-black text-brand-700 mt-2 tracking-tight">
-                Explore More Medical Specialties
+              <h3 className="text-xl sm:text-2xl font-black mt-2 tracking-tight">
+                <span className="text-[#00AEEF]">Explore More </span>
+                <span className="text-[#E8502A]">Medical Specialties</span>
               </h3>
               <p className="text-slate-600 text-sm mt-1 max-w-xl leading-relaxed">
                 Looking for other biomedical solutions? Browse our complete portfolio of certified clinical equipment, surgical instruments, and hospital consumables.

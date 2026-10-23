@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Container from "../../component/ui/Container";
 import AnimatedSection from "../../component/ui/AnimatedSection";
-import NetworkBackgroundCanvas from "../../component/ui/NetworkBackgroundCanvas";
+import ContactBackgroundAnimation from "./ContactBackgroundAnimation";
 import {
   ShieldCheck,
   Send,
@@ -78,42 +78,48 @@ export default function GetInTouchSection() {
       <section className="relative py-20 sm:py-24 bg-[#F4F7FA] border-t border-[#DCE6EE] overflow-hidden">
         <Container>
           <AnimatedSection animation="fade-up" className="text-center mb-14">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-brand-200/80 text-brand-700 text-xs font-extrabold uppercase tracking-widest mb-3 shadow-2xs">
-              <Award className="w-3.5 h-3.5 text-accent-600" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200/80 text-[#E8502A] text-xs font-extrabold uppercase tracking-widest mb-3 shadow-xs">
+              <Award className="w-3.5 h-3.5 text-[#E8502A] animate-spin-slow" />
               <span>Core Strengths</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-black text-brand-600 tracking-tight leading-tight">
-              Why Catalyst Biomedicals?
+            <h2 className="text-3xl sm:text-4xl font-black tracking-tight leading-tight">
+              <span className="text-[#00AEEF]">Why Catalyst</span>{" "}
+              <span className="text-[#E8502A]">Biomedicals?</span>
             </h2>
             <p className="mt-3 text-base text-slate-600 max-w-xl mx-auto">
               Delivering medical technology with uncompromised integrity, verified quality, and rapid regional execution.
             </p>
             {/* Centered accent divider matching logo palette */}
             <div className="mt-4 flex items-center justify-center gap-1.5">
-              <div className="h-1.5 w-16 rounded-full bg-brand-600" />
-              <div className="h-1.5 w-4 rounded-full bg-accent-600" />
+              <div className="h-1.5 w-16 rounded-full bg-[#00AEEF]" />
+              <div className="h-1.5 w-4 rounded-full bg-[#E8502A]" />
             </div>
           </AnimatedSection>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {whyBenefits.map((b, idx) => {
               const Icon = b.icon;
+              const isOrange = idx % 2 === 1;
               return (
                 <div
                   key={b.title}
-                  className="group relative rounded-2xl bg-white border border-[#DCE6EE] p-6 shadow-2xs hover:shadow-xl hover:border-brand-400 hover:-translate-y-1.5 transition-all duration-300"
+                  className="group relative rounded-2xl bg-white border border-[#DCE6EE] p-6 shadow-2xs card-lift-glow"
                   style={{ transitionDelay: `${idx * 60}ms` }}
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-brand-600 mb-5 border border-brand-200/50 group-hover:scale-110 group-hover:bg-brand-600 group-hover:text-white transition-all duration-300">
+                  <div className={`flex h-12 w-12 items-center justify-center rounded-xl mb-5 border shadow-2xs group-hover:scale-110 transition-all duration-300 ${
+                    isOrange ? "bg-orange-50 text-[#E8502A] border-orange-200/50 group-hover:bg-[#E8502A] group-hover:text-white" : "bg-brand-50 text-[#00AEEF] border-brand-200/50 group-hover:bg-[#00AEEF] group-hover:text-white"
+                  }`}>
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-base font-bold text-brand-800 leading-snug mb-2 group-hover:text-brand-600 transition-colors">
+                  <h3 className={`text-base font-bold leading-snug mb-2 transition-colors ${
+                    isOrange ? "text-[#E8502A] group-hover:text-orange-600" : "text-[#00AEEF] group-hover:text-cyan-600"
+                  }`}>
                     {b.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
                     {b.desc}
                   </p>
-                  <div className="absolute bottom-0 inset-x-8 h-1 rounded-t-full bg-gradient-to-r from-brand-600 via-accent-600 to-brand-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-0 inset-x-8 h-1 rounded-t-full bg-gradient-to-r from-[#00AEEF] via-[#E8502A] to-[#00AEEF] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               );
             })}
@@ -121,65 +127,58 @@ export default function GetInTouchSection() {
         </Container>
       </section>
 
-      {/* ── Section 09: Contact CTA Dark Navy Banner & Enquiry Form ── */}
+      {/* ── Section 09: Contact CTA Light Theme Banner & Enquiry Form ── */}
       <section
         id="enquiry"
-        className="relative py-20 sm:py-28 overflow-hidden bg-gradient-to-br from-[#071B33] via-[#0b223d] to-[#123C61] text-white border-t border-[#123C61]"
+        className="relative py-20 sm:py-28 overflow-hidden bg-gradient-to-b from-[#F4F7FA] via-white to-[#F4F7FA] text-slate-800 border-t border-[#DCE6EE]"
       >
-        {/* Interactive biomedical network canvas */}
-        <NetworkBackgroundCanvas
-          className="opacity-50"
-          nodeCount={45}
-          maxDistance={130}
-          interactive={true}
-        />
-
-        {/* Ambient radial glows */}
-        <div className="absolute top-10 right-10 w-96 h-96 bg-[#00AEEF]/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-10 left-10 w-96 h-96 bg-[#123C61]/40 rounded-full blur-3xl pointer-events-none" />
+        {/* ── Interactive Biomedical High-Tech Animated Background on Light Theme ── */}
+        <ContactBackgroundAnimation />
 
         <Container className="relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
             {/* Left Column: Blueprint Heading & Direct Contact Info */}
             <div className="lg:col-span-6 flex flex-col justify-center">
               <AnimatedSection animation="fade-right">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#00AEEF] text-xs font-extrabold uppercase tracking-widest mb-3">
-                  <Sparkles className="w-3.5 h-3.5 text-[#00AEEF]" />
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200/80 text-[#E8502A] text-xs font-extrabold uppercase tracking-widest mb-3 shadow-xs">
+                  <Sparkles className="w-3.5 h-3.5 text-[#E8502A] animate-spin-slow" />
                   <span>Business &amp; Hospital Enquiries</span>
                 </div>
 
                 {/* Blueprint Headline: "Let's Find the Right Medical Solution for You." */}
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight">
-                  Let&apos;s Find the Right Medical Solution for You.
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight">
+                  <span className="text-slate-900">Let&apos;s Find the Right</span>{" "}
+                  <span className="text-[#00AEEF]">Medical Solution</span>{" "}
+                  <span className="text-[#E8502A]">for You.</span>
                 </h2>
 
                 <div className="mt-4 flex items-center gap-1.5">
-                  <div className="h-1.5 w-16 rounded-full bg-brand-600" />
-                  <div className="h-1.5 w-4 rounded-full bg-accent-500" />
+                  <div className="h-1.5 w-16 rounded-full bg-[#00AEEF]" />
+                  <div className="h-1.5 w-4 rounded-full bg-[#E8502A]" />
                 </div>
 
-                <p className="mt-6 text-slate-200 text-base sm:text-lg leading-relaxed max-w-xl">
+                <p className="mt-6 text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl">
                   Our specialized team can help you identify the appropriate product or service enquiry route, discuss hospital procurement requirements, or coordinate equipment maintenance.
                 </p>
 
                 {/* Direct Verification Metrics */}
                 <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-md">
-                  <div className="p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 shadow-sm">
+                  <div className="p-4 rounded-2xl bg-white/90 border border-slate-200 shadow-xs">
                     <span className="text-xs uppercase font-extrabold tracking-wider text-[#00AEEF] block mb-1">
                       Headquarters
                     </span>
-                    <span className="text-sm font-bold text-white block">
+                    <span className="text-sm font-bold text-slate-800 block">
                       Sinhagad Road, Pune, Maharashtra
                     </span>
                   </div>
 
-                  <div className="p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 shadow-sm">
+                  <div className="p-4 rounded-2xl bg-white/90 border border-slate-200 shadow-xs">
                     <span className="text-xs uppercase font-extrabold tracking-wider text-[#00AEEF] block mb-1">
                       Direct Support Line
                     </span>
                     <a
                       href="tel:+912024353999"
-                      className="text-sm font-bold text-white hover:text-[#00AEEF] transition-colors flex items-center gap-1.5"
+                      className="text-sm font-bold text-slate-800 hover:text-[#00AEEF] transition-colors flex items-center gap-1.5"
                     >
                       <PhoneCall className="w-3.5 h-3.5 text-[#00AEEF]" />
                       <span>+91 20-24353999</span>
@@ -192,7 +191,7 @@ export default function GetInTouchSection() {
             {/* Right Column: Validated Enquiry Form */}
             <div className="lg:col-span-6">
               <AnimatedSection animation="fade-left" delay={150}>
-                <div className="rounded-3xl bg-white p-7 sm:p-9 shadow-2xl text-slate-800 border border-[#DCE6EE] relative">
+                <div className="rounded-3xl bg-white p-7 sm:p-9 shadow-lg text-slate-800 border border-[#DCE6EE] relative">
                   {/* Top cyan accent bar */}
                   <div className="absolute top-0 inset-x-12 h-1.5 rounded-b-full bg-[#00AEEF]" />
 
