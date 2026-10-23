@@ -34,22 +34,23 @@ export default function LeadershipPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-brand-950/80 via-brand-950/40 to-brand-950/80 pointer-events-none" />
 
         <Container className="relative h-full flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 z-10 py-8 sm:py-0">
-          <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-2xl border border-white/20 shadow-lg animate-float">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-600/40 text-brand-100 border border-brand-100/30">
-              <Users className="w-5 h-5 text-brand-100" />
+          <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full border border-white/20 shadow-lg animate-float">
+            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#00AEEF]/30 text-[#00AEEF] border border-[#00AEEF]/30">
+              <Users className="w-4 h-4 text-[#00AEEF]" />
             </div>
-            <span className="text-xs font-mono tracking-widest text-brand-50 uppercase">
+            <span className="text-xs font-mono tracking-widest text-white uppercase">
               FOUNDERS &amp; EXECUTIVE DIRECTORS
             </span>
           </div>
 
           <div className="text-left sm:text-right animate-fade-in-down">
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white drop-shadow-md">
-              Leadership
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight drop-shadow-md">
+              <span className="text-[#00AEEF]">Our</span>{" "}
+              <span className="text-[#E8502A]">Leadership</span>
             </h1>
             <div className="mt-3 flex items-center sm:justify-end gap-1.5">
-              <div className="h-1.5 w-16 rounded-full bg-brand-600" />
-              <div className="h-1.5 w-4 rounded-full bg-accent-600" />
+              <div className="h-1.5 w-16 rounded-full bg-[#00AEEF]" />
+              <div className="h-1.5 w-4 rounded-full bg-[#E8502A]" />
             </div>
           </div>
         </Container>
@@ -63,15 +64,17 @@ export default function LeadershipPage() {
 
         <Container className="relative z-10">
           <AnimatedSection animation="fade-up" className="text-center max-w-3xl mx-auto">
-            <span className="text-xs uppercase font-bold tracking-widest text-accent-600 bg-accent-50 px-3.5 py-1.5 rounded-full border border-accent-100">
+            <span className="text-xs uppercase font-extrabold tracking-widest text-[#E8502A] bg-orange-50 px-3.5 py-1.5 rounded-full border border-orange-200/80 shadow-xs">
               Executive Governance
             </span>
-            <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-black text-brand-600 tracking-tight leading-tight">
-              Founders &amp; Directors
+            <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight">
+              <span className="text-[#00AEEF]">Founders</span>{" "}
+              <span className="text-brand-900">&amp;</span>{" "}
+              <span className="text-[#E8502A]">Executive Directors</span>
             </h2>
             <div className="mt-3.5 flex items-center justify-center gap-1.5">
-              <div className="h-1.5 w-16 rounded-full bg-brand-600" />
-              <div className="h-1.5 w-4 rounded-full bg-accent-600" />
+              <div className="h-1.5 w-16 rounded-full bg-[#00AEEF]" />
+              <div className="h-1.5 w-4 rounded-full bg-[#E8502A]" />
             </div>
             <p className="mt-4 text-sm sm:text-base text-slate-600">
               Guided by decades of specialized experience in pharmaceutical, biomedical, and medical device ecosystems across India.
@@ -88,9 +91,9 @@ export default function LeadershipPage() {
                 CARD 1: SAGAR PATEL (FOUNDER/DIRECTOR)
                ══════════════════════════════════════════════════════ */}
             <AnimatedSection animation="fade-right" delay={100}>
-              <div className="group relative flex flex-col rounded-3xl border border-slate-200/90 bg-white p-8 sm:p-12 shadow-md hover:shadow-2xl hover:shadow-brand-900/10 hover:border-brand-400 transition-all duration-500 hover:-translate-y-2 overflow-hidden h-full">
+              <div className="group relative flex flex-col rounded-3xl border border-slate-200/90 bg-white p-8 sm:p-12 shadow-md hover:shadow-2xl hover:border-[#00AEEF]/50 transition-all duration-500 hover:-translate-y-2 overflow-hidden h-full card-lift-glow">
                 {/* Top Animated Brand Gradient Line */}
-                <div className="absolute top-0 inset-x-8 h-1.5 rounded-b-full bg-gradient-to-r from-brand-600 via-accent-600 to-brand-600 opacity-80 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute top-0 inset-x-8 h-1.5 rounded-b-full bg-gradient-to-r from-[#00AEEF] via-[#E8502A] to-[#00AEEF] opacity-80 group-hover:opacity-100 transition-opacity" />
 
                 {/* Watermark Quote Icon in Background */}
                 <div className="absolute top-8 right-8 text-7xl font-serif text-slate-100 select-none pointer-events-none group-hover:text-brand-50 transition-colors">
@@ -101,7 +104,7 @@ export default function LeadershipPage() {
                 <div className="flex flex-col items-center text-center mb-8">
                   <div className="relative mb-6">
                     {/* Outer Glowing Halo */}
-                    <div className="absolute -inset-2 rounded-full bg-gradient-to-tr from-brand-600/20 to-accent-600/20 blur-md group-hover:blur-xl transition-all duration-500" />
+                    <div className="absolute -inset-2 rounded-full bg-gradient-to-tr from-[#00AEEF]/20 to-[#E8502A]/20 blur-md group-hover:blur-xl transition-all duration-500" />
 
                     {/* Circular Avatar Container */}
                     <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full border-4 border-white bg-gradient-to-b from-slate-100 via-brand-50/50 to-slate-200 shadow-xl flex items-center justify-center overflow-hidden">
@@ -122,26 +125,26 @@ export default function LeadershipPage() {
                     </div>
 
                     {/* Verified Founder Badge */}
-                    <div className="absolute bottom-1 right-2 flex items-center justify-center h-10 w-10 rounded-full bg-brand-600 text-white shadow-lg border-2 border-white group-hover:scale-110 transition-transform">
+                    <div className="absolute bottom-1 right-2 flex items-center justify-center h-10 w-10 rounded-full bg-[#00AEEF] text-white shadow-lg border-2 border-white group-hover:scale-110 transition-transform">
                       <ShieldCheck className="w-5 h-5" />
                     </div>
                   </div>
 
                   {/* Pill Tag */}
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-brand-50 text-brand-700 border border-brand-100 mb-2">
-                    <Sparkles className="w-3 h-3 text-brand-600" />
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-brand-50 text-[#00AEEF] border border-brand-100 mb-2 shadow-2xs">
+                    <Sparkles className="w-3 h-3 text-[#00AEEF]" />
                     <span>Founding Executive</span>
                   </span>
 
                   {/* Founder Name & Title */}
-                  <h3 className="text-2xl sm:text-3xl font-black text-brand-600 tracking-tight group-hover:text-brand-700 transition-colors">
-                    Sagar Patel (Founder/Director)
+                  <h3 className="text-2xl sm:text-3xl font-black text-[#00AEEF] tracking-tight group-hover:text-cyan-600 transition-colors">
+                    Sagar Patel <span className="text-sm font-bold text-[#E8502A] block sm:inline sm:ml-1">(Founder/Director)</span>
                   </h3>
 
                   {/* Decorative Divider */}
                   <div className="mt-3 flex items-center justify-center gap-1.5">
-                    <div className="h-1 w-12 rounded-full bg-brand-600 group-hover:w-16 transition-all duration-300" />
-                    <div className="h-1 w-3 rounded-full bg-accent-600" />
+                    <div className="h-1 w-12 rounded-full bg-[#00AEEF] group-hover:w-16 transition-all duration-300" />
+                    <div className="h-1 w-3 rounded-full bg-[#E8502A]" />
                   </div>
                 </div>
 
@@ -197,12 +200,12 @@ export default function LeadershipPage() {
                 CARD 2: NILESH KELKAR (FOUNDER/DIRECTOR)
                ══════════════════════════════════════════════════════ */}
             <AnimatedSection animation="fade-left" delay={200}>
-              <div className="group relative flex flex-col rounded-3xl border border-slate-200/90 bg-white p-8 sm:p-12 shadow-md hover:shadow-2xl hover:shadow-accent-900/10 hover:border-accent-400 transition-all duration-500 hover:-translate-y-2 overflow-hidden h-full">
+              <div className="group relative flex flex-col rounded-3xl border border-slate-200/90 bg-white p-8 sm:p-12 shadow-md hover:shadow-2xl hover:border-[#E8502A]/50 transition-all duration-500 hover:-translate-y-2 overflow-hidden h-full card-lift-glow">
                 {/* Top Animated Brand Gradient Line */}
-                <div className="absolute top-0 inset-x-8 h-1.5 rounded-b-full bg-accent-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute top-0 inset-x-8 h-1.5 rounded-b-full bg-gradient-to-r from-[#E8502A] via-[#00AEEF] to-[#E8502A] opacity-80 group-hover:opacity-100 transition-opacity" />
 
                 {/* Watermark Quote Icon in Background */}
-                <div className="absolute top-8 right-8 text-7xl font-serif text-slate-100 select-none pointer-events-none group-hover:text-accent-50 transition-colors">
+                <div className="absolute top-8 right-8 text-7xl font-serif text-slate-100 select-none pointer-events-none group-hover:text-orange-50 transition-colors">
                   &ldquo;
                 </div>
 
@@ -231,26 +234,26 @@ export default function LeadershipPage() {
                     </div>
 
                     {/* Verified Founder Badge */}
-                    <div className="absolute bottom-1 right-2 flex items-center justify-center h-10 w-10 rounded-full bg-accent-600 text-white shadow-lg border-2 border-white group-hover:scale-110 transition-transform">
+                    <div className="absolute bottom-1 right-2 flex items-center justify-center h-10 w-10 rounded-full bg-[#E8502A] text-white shadow-lg border-2 border-white group-hover:scale-110 transition-transform">
                       <Award className="w-5 h-5" />
                     </div>
                   </div>
 
                   {/* Pill Tag */}
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-accent-50 text-accent-700 border border-accent-100 mb-2">
-                    <Sparkles className="w-3 h-3 text-accent-600" />
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-orange-50 text-[#E8502A] border border-orange-100 mb-2 shadow-2xs">
+                    <Sparkles className="w-3 h-3 text-[#E8502A]" />
                     <span>Founding Executive</span>
                   </span>
 
                   {/* Founder Name & Title */}
-                  <h3 className="text-2xl sm:text-3xl font-black text-brand-600 tracking-tight group-hover:text-brand-700 transition-colors">
-                    Nilesh Kelkar (Founder/Director)
+                  <h3 className="text-2xl sm:text-3xl font-black text-[#E8502A] tracking-tight group-hover:text-orange-600 transition-colors">
+                    Nilesh Kelkar <span className="text-sm font-bold text-[#00AEEF] block sm:inline sm:ml-1">(Founder/Director)</span>
                   </h3>
 
                   {/* Decorative Divider */}
                   <div className="mt-3 flex items-center justify-center gap-1.5">
-                    <div className="h-1 w-12 rounded-full bg-brand-600 group-hover:w-16 transition-all duration-300" />
-                    <div className="h-1 w-3 rounded-full bg-accent-600" />
+                    <div className="h-1 w-12 rounded-full bg-[#E8502A] group-hover:w-16 transition-all duration-300" />
+                    <div className="h-1 w-3 rounded-full bg-[#00AEEF]" />
                   </div>
                 </div>
 

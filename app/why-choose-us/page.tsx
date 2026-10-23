@@ -36,22 +36,23 @@ export default function WhyChooseUsPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-brand-950/80 via-brand-950/40 to-brand-950/80 pointer-events-none" />
 
         <Container className="relative h-full flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 z-10 py-8 sm:py-0">
-          <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-2xl border border-white/20 shadow-lg animate-float">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-accent-600/40 text-accent-100 border border-accent-100/30">
-              <Award className="w-5 h-5 text-accent-100" />
+          <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full border border-white/20 shadow-lg animate-float">
+            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#00AEEF]/30 text-[#00AEEF] border border-[#00AEEF]/30">
+              <Award className="w-4 h-4 text-[#00AEEF]" />
             </div>
-            <span className="text-xs font-mono tracking-widest text-brand-50 uppercase">
+            <span className="text-xs font-mono tracking-widest text-white uppercase">
               EXCELLENCE • TRUST • INTEGRITY
             </span>
           </div>
 
           <div className="text-left sm:text-right animate-fade-in-down">
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white drop-shadow-md">
-              Why Choose Us
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight drop-shadow-md">
+              <span className="text-[#00AEEF]">Why Choose</span>{" "}
+              <span className="text-[#E8502A]">Us</span>
             </h1>
             <div className="mt-3 flex items-center sm:justify-end gap-1.5">
-              <div className="h-1.5 w-16 rounded-full bg-brand-600" />
-              <div className="h-1.5 w-4 rounded-full bg-accent-600" />
+              <div className="h-1.5 w-16 rounded-full bg-[#00AEEF]" />
+              <div className="h-1.5 w-4 rounded-full bg-[#E8502A]" />
             </div>
           </div>
         </Container>
@@ -66,15 +67,16 @@ export default function WhyChooseUsPage() {
         <Container className="relative z-10">
           {/* Section Introduction */}
           <AnimatedSection animation="fade-up" className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-            <span className="text-xs uppercase font-bold tracking-widest text-accent-600 bg-accent-50 px-3.5 py-1.5 rounded-full border border-accent-100">
+            <span className="text-xs uppercase font-extrabold tracking-widest text-[#E8502A] bg-orange-50 px-3.5 py-1.5 rounded-full border border-orange-200/80 shadow-xs">
               The Catalyst Advantage
             </span>
-            <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-black text-brand-600 tracking-tight leading-tight">
-              Our Core Commitments
+            <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight">
+              <span className="text-[#00AEEF]">Our Core</span>{" "}
+              <span className="text-[#E8502A]">Commitments</span>
             </h2>
             <div className="mt-3.5 flex items-center justify-center gap-1.5">
-              <div className="h-1.5 w-16 rounded-full bg-brand-600" />
-              <div className="h-1.5 w-4 rounded-full bg-accent-600" />
+              <div className="h-1.5 w-16 rounded-full bg-[#00AEEF]" />
+              <div className="h-1.5 w-4 rounded-full bg-[#E8502A]" />
             </div>
             <p className="mt-4 text-sm sm:text-base text-slate-600">
               Dedicated to delivering world-class medical equipment, proven clinical value, and exceptional service across India.
@@ -90,7 +92,7 @@ export default function WhyChooseUsPage() {
               <AnimatedSection animation="fade-right" delay={100}>
                 <div className="group relative flex flex-col rounded-3xl border border-slate-200/90 bg-white p-8 sm:p-11 shadow-md hover:shadow-2xl hover:shadow-brand-900/10 hover:border-brand-400 transition-all duration-500 hover:-translate-y-2 overflow-hidden h-full">
                   {/* Top Border Accent Line */}
-                  <div className="absolute top-0 inset-x-8 h-1.5 rounded-b-full bg-accent-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute top-0 inset-x-8 h-1.5 rounded-b-full bg-[#00AEEF] opacity-0 group-hover:opacity-100 transition-opacity" />
 
                   {/* Corner Watermark */}
                   <span className="absolute top-6 right-8 text-4xl sm:text-5xl font-black text-slate-100 group-hover:text-brand-50 transition-colors select-none">
@@ -98,20 +100,20 @@ export default function WhyChooseUsPage() {
                   </span>
 
                   {/* Glowing Icon Frame */}
-                  <div className="w-16 h-16 rounded-2xl bg-brand-50 border border-brand-100 text-brand-600 flex items-center justify-center mb-6 group-hover:bg-brand-600 group-hover:text-white group-hover:scale-110 transition-all duration-300 shadow-xs">
+                  <div className="w-16 h-16 rounded-2xl bg-brand-50 border border-brand-100 text-[#00AEEF] flex items-center justify-center mb-6 group-hover:bg-[#00AEEF] group-hover:text-white group-hover:scale-110 transition-all duration-300 shadow-xs">
                     <Clock className="w-8 h-8" />
                   </div>
 
                   {/* Subtitle Badge */}
                   <div className="mb-2">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs uppercase tracking-wider font-bold bg-brand-50 text-brand-700 border border-brand-100">
-                      <Sparkles className="w-3 h-3 text-brand-600" />
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs uppercase tracking-wider font-bold bg-brand-50 text-[#00AEEF] border border-brand-100">
+                      <Sparkles className="w-3 h-3 text-[#00AEEF]" />
                       <span>Domain Expertise</span>
                     </span>
                   </div>
 
                   {/* Exact Title */}
-                  <h3 className="text-xl sm:text-2xl font-black text-brand-600 mb-4 group-hover:text-brand-700 transition-colors leading-snug">
+                  <h3 className="text-xl sm:text-2xl font-black text-[#00AEEF] mb-4 group-hover:text-cyan-600 transition-colors leading-snug">
                     Over 15 Years of Experience in this Field
                   </h3>
 
@@ -124,8 +126,8 @@ export default function WhyChooseUsPage() {
                   </p>
 
                   {/* Bottom Trust Feature Line */}
-                  <div className="mt-8 pt-5 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-brand-600">
-                    <CheckCircle2 className="w-4 h-4 text-brand-600 shrink-0" />
+                  <div className="mt-8 pt-5 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-[#00AEEF]">
+                    <CheckCircle2 className="w-4 h-4 text-[#00AEEF] shrink-0" />
                     <span>Trusted Industry Leadership</span>
                   </div>
                 </div>
@@ -137,7 +139,7 @@ export default function WhyChooseUsPage() {
               <AnimatedSection animation="fade-left" delay={200}>
                 <div className="group relative flex flex-col rounded-3xl border border-slate-200/90 bg-white p-8 sm:p-11 shadow-md hover:shadow-2xl hover:shadow-accent-900/10 hover:border-accent-400 transition-all duration-500 hover:-translate-y-2 overflow-hidden h-full">
                   {/* Top Border Accent Line */}
-                  <div className="absolute top-0 inset-x-8 h-1.5 rounded-b-full bg-accent-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute top-0 inset-x-8 h-1.5 rounded-b-full bg-[#E8502A] opacity-0 group-hover:opacity-100 transition-opacity" />
 
                   {/* Corner Watermark */}
                   <span className="absolute top-6 right-8 text-4xl sm:text-5xl font-black text-slate-100 group-hover:text-accent-50 transition-colors select-none">
@@ -145,20 +147,20 @@ export default function WhyChooseUsPage() {
                   </span>
 
                   {/* Glowing Icon Frame */}
-                  <div className="w-16 h-16 rounded-2xl bg-accent-50 border border-accent-100 text-accent-600 flex items-center justify-center mb-6 group-hover:bg-accent-600 group-hover:text-white group-hover:scale-110 transition-all duration-300 shadow-xs">
+                  <div className="w-16 h-16 rounded-2xl bg-orange-50 border border-orange-100 text-[#E8502A] flex items-center justify-center mb-6 group-hover:bg-[#E8502A] group-hover:text-white group-hover:scale-110 transition-all duration-300 shadow-xs">
                     <HeartHandshake className="w-8 h-8" />
                   </div>
 
                   {/* Subtitle Badge */}
                   <div className="mb-2">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs uppercase tracking-wider font-bold bg-accent-50 text-accent-700 border border-accent-100">
-                      <Sparkles className="w-3 h-3 text-accent-600" />
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs uppercase tracking-wider font-bold bg-orange-50 text-[#E8502A] border border-orange-100">
+                      <Sparkles className="w-3 h-3 text-[#E8502A]" />
                       <span>Healthcare Partnership</span>
                     </span>
                   </div>
 
                   {/* Exact Title */}
-                  <h3 className="text-xl sm:text-2xl font-black text-brand-600 mb-4 group-hover:text-brand-700 transition-colors leading-snug">
+                  <h3 className="text-xl sm:text-2xl font-black text-[#E8502A] mb-4 group-hover:text-orange-600 transition-colors leading-snug">
                     Patient Centric Approach
                   </h3>
 
@@ -172,8 +174,8 @@ export default function WhyChooseUsPage() {
                   </p>
 
                   {/* Bottom Trust Feature Line */}
-                  <div className="mt-8 pt-5 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-accent-600">
-                    <CheckCircle2 className="w-4 h-4 text-accent-600 shrink-0" />
+                  <div className="mt-8 pt-5 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-[#E8502A]">
+                    <CheckCircle2 className="w-4 h-4 text-[#E8502A] shrink-0" />
                     <span>Empowering Medical Practitioners</span>
                   </div>
                 </div>
@@ -184,9 +186,9 @@ export default function WhyChooseUsPage() {
                 CARD 3: Quality is our Business (Full-Width Highlight)
                ══════════════════════════════════════════════════════ */}
             <AnimatedSection animation="scale-in" delay={150}>
-              <div className="group relative rounded-3xl border border-slate-200/90 bg-white p-8 sm:p-12 shadow-md hover:shadow-2xl hover:shadow-brand-900/10 hover:border-brand-400 transition-all duration-500 hover:-translate-y-1.5 overflow-hidden text-center">
+              <div className="group relative rounded-3xl border border-slate-200/90 bg-white p-8 sm:p-12 shadow-md hover:shadow-2xl hover:shadow-brand-900/10 hover:border-[#00AEEF]/50 transition-all duration-500 hover:-translate-y-1.5 overflow-hidden text-center card-lift-glow">
                 {/* Top Accent Gradient Border */}
-                <div className="absolute top-0 inset-x-12 h-1.5 rounded-b-full bg-gradient-to-r from-brand-600 via-accent-600 to-brand-600 opacity-80 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute top-0 inset-x-12 h-1.5 rounded-b-full bg-gradient-to-r from-[#00AEEF] via-[#E8502A] to-[#00AEEF] opacity-80 group-hover:opacity-100 transition-opacity" />
 
                 {/* Watermark */}
                 <span className="absolute top-6 right-8 text-4xl sm:text-5xl font-black text-slate-100 group-hover:text-brand-50 transition-colors select-none">
@@ -194,27 +196,27 @@ export default function WhyChooseUsPage() {
                 </span>
 
                 {/* Centered Glowing Icon Frame */}
-                <div className="mx-auto w-20 h-20 rounded-2xl bg-gradient-to-tr from-brand-50 to-accent-50 border border-brand-100 text-brand-600 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-brand-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                <div className="mx-auto w-20 h-20 rounded-2xl bg-gradient-to-tr from-brand-50 to-orange-50 border border-brand-100 text-[#00AEEF] flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#00AEEF] group-hover:text-white transition-all duration-300 shadow-sm">
                   <ShieldCheck className="w-10 h-10" />
                 </div>
 
                 {/* Subtitle Badge */}
                 <div className="mb-2">
-                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs uppercase tracking-wider font-bold bg-brand-50 text-brand-700 border border-brand-100">
-                    <Sparkles className="w-3 h-3 text-accent-600" />
+                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs uppercase tracking-wider font-bold bg-orange-50 text-[#E8502A] border border-orange-100">
+                    <Sparkles className="w-3 h-3 text-[#E8502A]" />
                     <span>Uncompromising Standard</span>
                   </span>
                 </div>
 
                 {/* Exact Title */}
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-brand-600 mb-4 group-hover:text-brand-700 transition-colors">
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#00AEEF] mb-4 group-hover:text-[#E8502A] transition-colors">
                   Quality is our Business
                 </h3>
 
                 {/* Decorative Divider */}
                 <div className="mx-auto mb-6 flex items-center justify-center gap-1.5">
-                  <div className="h-1.5 w-14 rounded-full bg-brand-600" />
-                  <div className="h-1.5 w-3.5 rounded-full bg-accent-600" />
+                  <div className="h-1.5 w-14 rounded-full bg-[#00AEEF]" />
+                  <div className="h-1.5 w-3.5 rounded-full bg-[#E8502A]" />
                 </div>
 
                 {/* Exact Paragraph */}

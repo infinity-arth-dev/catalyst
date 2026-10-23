@@ -6,20 +6,20 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import Container from "../../ui/Container";
 import { navigation } from "../../../data/navigation";
-import { Menu, X, ChevronDown, PhoneCall } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronRight, PhoneCall } from "lucide-react";
 
 export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [desktopDropdownOpen, setDesktopDropdownOpen] = useState<string | null>(null);
-  const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState<string | null>("Products");
+  const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState<string | null>(null);
   const navRef = useRef<HTMLElement | null>(null);
-
+  const headerRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
+      setScrolled(window.scrollY > 30);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -35,7 +35,7 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Close mobile drawer on Escape key and lock body scroll
+  // Lock body scroll when mobile menu is open
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape" && open) {
@@ -54,6 +54,12 @@ export default function Header() {
     };
   }, [open]);
 
+  // Close mobile drawer on route change
+  useEffect(() => {
+    setOpen(false);
+    setDesktopDropdownOpen(null);
+  }, [pathname]);
+
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(href + "/");
 
@@ -66,13 +72,16 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 transition-all duration-250 ease-out bg-white/95 backdrop-blur-md shadow-md border-b border-[#DCE6EE] py-2 sm:py-2.5">
-      {/* Main bar */}
-      <Container className="flex items-center justify-between gap-4">
+    <header
+      ref={headerRef}
+      className="sticky top-0 z-50 transition-all duration-200 bg-white/98 backdrop-blur-md shadow-sm border-b border-[#DCE6EE]"
+    >
+      {/* ── Main Navigation Bar ── */}
+      <Container className="flex items-center justify-between gap-4 py-2.5 sm:py-3">
         {/* Brand Logo */}
         <Link
           href="/"
-          className="flex items-center group transition-transform duration-300 hover:scale-[1.02]"
+          className="flex items-center group transition-transform duration-200 hover:scale-[1.01]"
         >
           <Image
             src="/images/logocatalyst.jpg"
@@ -81,9 +90,9 @@ export default function Header() {
             height={95}
             className={`${
               scrolled
-                ? "h-11 sm:h-13 md:h-16 lg:h-[68px]"
-                : "h-12 sm:h-14 md:h-16 lg:h-[72px]"
-            } w-auto object-contain transition-all duration-250`}
+                ? "h-10 sm:h-12 md:h-14 lg:h-[62px]"
+                : "h-11 sm:h-13 md:h-15 lg:h-[68px]"
+            } w-auto object-contain transition-all duration-200`}
             priority
           />
         </Link>
@@ -111,96 +120,56 @@ export default function Header() {
                           prev === item.label ? null : item.label
                         )
                       }
-                      className={`group font-semibold py-2 transition-all flex items-center gap-1 cursor-pointer relative text-sm ${
+                      className={`group font-bold py-2 transition-all flex items-center gap-1.5 cursor-pointer relative text-sm ${
                         parentActive
-                          ? "text-[#00AEEF] font-bold"
-                          : "text-[#00AEEF]/85 hover:text-[#00AEEF]"
+                          ? "text-[#00AEEF]"
+                          : "text-slate-700 hover:text-[#00AEEF]"
                       }`}
                       aria-expanded={isDropdownVisible}
                       aria-haspopup="true"
                     >
                       <span>{item.label}</span>
                       <ChevronDown
-                        className={`w-4 h-4 transition-transform duration-150 ${
+                        className={`w-4 h-4 transition-transform duration-200 ${
                           isDropdownVisible
                             ? "rotate-180 text-[#00AEEF]"
-                            : "text-[#00AEEF]/70 group-hover:text-[#00AEEF]"
+                            : "text-slate-400 group-hover:text-[#00AEEF]"
                         }`}
                       />
                       {/* Active indicator bar */}
                       {parentActive && (
-                        <span className="absolute bottom-0 left-0 right-0 h-0.5 rounded-full bg-[#00AEEF] animate-scale-in" />
+                        <span className="absolute bottom-0 left-0 right-0 h-0.5 rounded-full bg-[#00AEEF]" />
                       )}
                     </button>
 
-                    {/* Dropdown Menu with 150ms fade and 8px upward motion */}
+                    {/* Desktop Dropdown Card */}
                     {isDropdownVisible && (
-                      <div
-                        className={`absolute top-full left-0 z-50 pt-2 transition-all duration-150 transform translate-y-0 ${
-                          item.label === "Products" ? "min-w-[340px]" : "min-w-[240px]"
-                        }`}
-                      >
-                        <div className="overflow-hidden rounded-2xl border border-[#DCE6EE] bg-white p-3 shadow-2xl shadow-[#071B33]/15 backdrop-blur-md">
-                          <div className="h-1 w-full rounded-t-full bg-gradient-to-r from-brand-600 via-accent-600 to-brand-600 mb-2" />
-                          
-                          {item.label === "Products" ? (
-                            <div>
-                              <div className="px-3 py-1.5 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-slate-500 border-b border-slate-100 mb-1.5">
-                                <span>Clinical Specialties</span>
-                                <Link
-                                  href="/products"
-                                  onClick={() => setDesktopDropdownOpen(null)}
-                                  className="text-[#00AEEF] hover:underline"
-                                >
-                                  View All
-                                </Link>
-                              </div>
-                              <div className="grid grid-cols-2 gap-1">
-                                {item.children!.map((child) => {
-                                  const childActive = pathname === child.href;
-                                  return (
-                                    <Link
-                                      key={child.href}
-                                      href={child.href}
-                                      onClick={() => setDesktopDropdownOpen(null)}
-                                      className={`flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold transition-all duration-150 ${
-                                        childActive
-                                          ? "bg-[#EAF5F8] text-[#00AEEF] font-bold"
-                                          : "text-[#071B33] hover:bg-slate-50 hover:text-[#00AEEF] hover:translate-x-0.5"
-                                      }`}
-                                    >
+                      <div className="absolute top-full left-0 z-50 pt-2 transition-all duration-150 min-w-[240px]">
+                        <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white p-3 shadow-xl backdrop-blur-md">
+                          <div className="h-1 w-full rounded-t-full bg-gradient-to-r from-[#00AEEF] via-[#29bbf4] to-[#E8502A] mb-2.5" />
+                          <ul className="space-y-1">
+                            {item.children!.map((child) => {
+                              const childActive = pathname === child.href;
+                              return (
+                                <li key={child.href}>
+                                  <Link
+                                    href={child.href}
+                                    onClick={() => setDesktopDropdownOpen(null)}
+                                    className={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-bold transition-all duration-150 ${
+                                      childActive
+                                        ? "bg-[#EAF5F8] text-[#00AEEF]"
+                                        : "text-slate-700 hover:bg-slate-50 hover:text-[#00AEEF] hover:translate-x-1"
+                                    }`}
+                                  >
+                                    <span>{child.label}</span>
+                                    {childActive && (
                                       <span className="h-1.5 w-1.5 rounded-full bg-[#00AEEF]" />
-                                      <span className="truncate">{child.label}</span>
-                                    </Link>
-                                  );
-                                })}
-                              </div>
-                            </div>
-                          ) : (
-                            <ul className="space-y-1">
-                              {item.children!.map((child) => {
-                                const childActive = pathname === child.href;
-                                return (
-                                  <li key={child.href}>
-                                    <Link
-                                      href={child.href}
-                                      onClick={() => setDesktopDropdownOpen(null)}
-                                      className={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-150 ${
-                                        childActive
-                                          ? "bg-[#EAF5F8] text-[#00AEEF] font-bold"
-                                          : "text-[#00AEEF] hover:bg-[#EAF5F8] hover:translate-x-1"
-                                      }`}
-                                    >
-                                      <span>{child.label}</span>
-                                      {childActive && (
-                                        <span className="h-1.5 w-1.5 rounded-full bg-[#00AEEF] animate-pulse" />
-                                      )}
-                                    </Link>
-                                  </li>
-                                );
-                              })}
-                            </ul>
-                          )}
+                                    )}
+                                  </Link>
+                                </li>
+                              );
+                            })}
+                          </ul>
                         </div>
                       </div>
                     )}
@@ -212,16 +181,15 @@ export default function Header() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className={`group font-semibold py-2 transition-all relative text-sm ${
+                    className={`group font-bold py-2 transition-all relative text-sm ${
                       isActive(item.href)
-                        ? "text-[#00AEEF] font-bold"
-                        : "text-[#00AEEF]/85 hover:text-[#00AEEF]"
+                        ? "text-[#00AEEF]"
+                        : "text-slate-700 hover:text-[#00AEEF]"
                     }`}
                   >
                     <span>{item.label}</span>
-                    {/* Active indicator bar */}
                     {isActive(item.href) && (
-                      <span className="absolute bottom-0 left-0 right-0 h-0.5 rounded-full bg-[#00AEEF] animate-scale-in" />
+                      <span className="absolute bottom-0 left-0 right-0 h-0.5 rounded-full bg-[#00AEEF]" />
                     )}
                   </Link>
                 </li>
@@ -230,46 +198,41 @@ export default function Header() {
           </ul>
         </nav>
 
-        {/* Action Button & Mobile Menu Trigger */}
+        {/* ── Mobile Menu Trigger Button ── */}
         <div className="flex items-center gap-3">
-          {/* Mobile menu trigger */}
+          <Link
+            href="/contact-us"
+            className="hidden sm:inline-flex lg:hidden items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#EAF5F8] text-[#00AEEF] text-xs font-bold border border-[#00AEEF]/30"
+          >
+            <PhoneCall className="w-3.5 h-3.5" />
+            <span>Contact</span>
+          </Link>
+
           <button
             type="button"
-            className="rounded-xl p-2.5 lg:hidden transition-all duration-200 active:scale-90 text-[#00AEEF] hover:bg-[#EAF5F8]/50"
+            className="rounded-xl p-2.5 lg:hidden transition-colors active:scale-95 text-slate-800 hover:bg-slate-100 hover:text-[#00AEEF] border border-slate-200"
             aria-expanded={open}
-            aria-controls="mobile-menu-drawer"
+            aria-controls="mobile-navigation-menu"
             aria-label="Toggle navigation menu"
-            onClick={() => setOpen((v) => !v)}
+            onClick={() => setOpen((prev) => !prev)}
           >
-            {open ? <X className="w-6 h-6 text-[#00AEEF]" /> : <Menu className="w-6 h-6 text-[#00AEEF]" />}
+            {open ? <X className="w-6 h-6 text-[#E8502A]" /> : <Menu className="w-6 h-6 text-slate-800" />}
           </button>
         </div>
       </Container>
 
-      {/* Full-Height Accessible Mobile Drawer */}
+      {/* ── Mobile Responsive Dropdown & Navigation Drawer ── */}
       {open && (
         <div
-          id="mobile-menu-drawer"
+          id="mobile-navigation-menu"
           role="dialog"
           aria-modal="true"
-          aria-label="Mobile Navigation Drawer"
-          className="fixed inset-0 top-[72px] z-50 bg-[#071B33]/70 backdrop-blur-md lg:hidden flex flex-col justify-between animate-fade-in"
+          aria-label="Mobile Navigation"
+          className="fixed inset-x-0 top-full z-50 bg-slate-900/50 backdrop-blur-sm lg:hidden h-[calc(100dvh-100%)] flex flex-col justify-start"
         >
-          <div className="bg-white max-h-[85vh] overflow-y-auto p-5 rounded-b-3xl shadow-2xl border-b border-[#DCE6EE]">
-            <div className="flex items-center justify-between pb-3 mb-3 border-b border-slate-100">
-              <span className="text-xs uppercase font-extrabold tracking-wider text-slate-400">
-                Menu Navigation
-              </span>
-              <button
-                onClick={() => setOpen(false)}
-                className="p-1 rounded-lg text-slate-400 hover:text-slate-800"
-                aria-label="Close menu"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-
-            <ul className="flex flex-col space-y-1">
+          {/* Main Drawer Sheet */}
+          <div className="bg-white border-b border-slate-200/80 shadow-xl max-h-[calc(100dvh-75px)] overflow-y-auto px-4 py-3">
+            <ul className="flex flex-col divide-y divide-slate-100">
               {navigation.map((item) => {
                 const hasChildren = item.children && item.children.length > 0;
                 const parentActive = isParentActive(item);
@@ -277,62 +240,78 @@ export default function Header() {
 
                 if (hasChildren) {
                   return (
-                    <li key={item.label} className="border-b border-slate-100 last:border-b-0 pb-1">
-                      <button
-                        type="button"
-                        onClick={() =>
-                          setMobileSubmenuOpen(isSubmenuOpen ? null : item.label)
-                        }
-                        className={`w-full flex items-center justify-between py-3 px-3 font-bold rounded-xl text-base transition-colors ${
-                          parentActive
-                            ? "text-[#00AEEF] bg-[#EAF5F8]"
-                            : "text-[#00AEEF] hover:bg-[#EAF5F8]/50"
-                        }`}
-                        aria-expanded={isSubmenuOpen}
-                      >
-                        <span>{item.label}</span>
-                        <ChevronDown
-                          className={`w-5 h-5 transition-transform duration-200 ${
-                            isSubmenuOpen ? "rotate-180 text-[#00AEEF]" : "text-[#00AEEF]/70"
+                    <li key={item.label} className="py-0.5">
+                      <div className="flex items-center justify-between">
+                        {/* Parent Page Direct Link */}
+                        <Link
+                          href={item.href}
+                          onClick={() => setOpen(false)}
+                          className={`flex-1 py-2.5 px-2 text-[15px] transition-colors ${
+                            parentActive
+                              ? "text-[#00AEEF] font-semibold"
+                              : "text-slate-800 hover:text-[#00AEEF] font-medium"
                           }`}
-                        />
-                      </button>
+                        >
+                          {item.label}
+                        </Link>
 
+                        {/* Minimal Toggle Button */}
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setMobileSubmenuOpen((prev) =>
+                              prev === item.label ? null : item.label
+                            )
+                          }
+                          className="p-2.5 text-slate-400 hover:text-[#00AEEF] transition-colors rounded-lg active:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00AEEF]"
+                          aria-expanded={isSubmenuOpen}
+                          aria-label={`Toggle ${item.label} submenu`}
+                        >
+                          <ChevronDown
+                            className={`w-4 h-4 transition-transform duration-200 ${
+                              isSubmenuOpen
+                                ? "rotate-180 text-[#00AEEF]"
+                                : "text-slate-400"
+                            }`}
+                          />
+                        </button>
+                      </div>
+
+                      {/* Minimal Indented Submenu */}
                       {isSubmenuOpen && (
-                        <ul className="ml-3 pl-3 border-l-2 border-[#00AEEF]/40 space-y-1 py-1.5 animate-fade-in-down">
+                        <div className="ml-3 pl-3 border-l border-slate-200/90 my-1 space-y-0.5">
                           {item.children!.map((child) => {
                             const childActive = pathname === child.href;
                             return (
-                              <li key={child.href}>
-                                <Link
-                                  href={child.href}
-                                  onClick={() => setOpen(false)}
-                                  className={`block py-2 px-3 rounded-lg text-sm font-semibold transition-all ${
-                                    childActive
-                                      ? "bg-[#EAF5F8] text-[#00AEEF] font-bold"
-                                      : "text-[#00AEEF]/85 hover:text-[#00AEEF]"
-                                  }`}
-                                >
-                                  {child.label}
-                                </Link>
-                              </li>
+                              <Link
+                                key={child.href}
+                                href={child.href}
+                                onClick={() => setOpen(false)}
+                                className={`block px-2.5 py-2 rounded-lg text-sm transition-colors ${
+                                  childActive
+                                    ? "text-[#00AEEF] font-semibold bg-[#EAF5F8]/70"
+                                    : "text-slate-600 hover:text-[#00AEEF] hover:bg-slate-50 font-normal"
+                                }`}
+                              >
+                                {child.label}
+                              </Link>
                             );
                           })}
-                        </ul>
+                        </div>
                       )}
                     </li>
                   );
                 }
 
                 return (
-                  <li key={item.href}>
+                  <li key={item.href} className="py-0.5">
                     <Link
                       href={item.href}
                       onClick={() => setOpen(false)}
-                      className={`block px-3 py-3 font-bold rounded-xl text-base transition-colors ${
+                      className={`block py-2.5 px-2 text-[15px] rounded-lg transition-colors ${
                         isActive(item.href)
-                          ? "bg-[#EAF5F8] text-[#00AEEF]"
-                          : "text-[#00AEEF] hover:bg-[#EAF5F8]/50"
+                          ? "text-[#00AEEF] font-semibold bg-[#EAF5F8]/50"
+                          : "text-slate-800 hover:text-[#00AEEF] font-medium"
                       }`}
                     >
                       {item.label}
@@ -340,20 +319,10 @@ export default function Header() {
                   </li>
                 );
               })}
-
-              <li className="pt-4">
-                <Link
-                  href="/contact-us"
-                  onClick={() => setOpen(false)}
-                  className="btn-shimmer flex items-center justify-center gap-2 rounded-xl bg-[#00AEEF] py-3.5 text-sm font-bold text-[#071B33] shadow-md shadow-cyan-500/20"
-                >
-                  <PhoneCall className="w-4 h-4 text-[#071B33]" />
-                  <span>Request an Enquiry</span>
-                </Link>
-              </li>
             </ul>
           </div>
-          {/* Backdrop click to dismiss */}
+
+          {/* Dimmed backdrop area (tap outside to close) */}
           <div className="flex-1" onClick={() => setOpen(false)} />
         </div>
       )}

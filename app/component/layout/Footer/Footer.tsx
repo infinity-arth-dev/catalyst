@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Container from "../../ui/Container";
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
-import { ChevronRight, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import { ChevronRight, Mail, Phone, MapPin } from "lucide-react";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -149,12 +149,22 @@ export default function Footer() {
 
               <div className="pt-1.5 flex items-start gap-2.5">
                 <Mail className="w-4 h-4 text-[#00AEEF] shrink-0 mt-0.5" />
-                <div>
+                <div className="space-y-1">
                   <a
-                    href="mailto:sales@catalystbiomedicals.com"
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@catalystbiomedicals.com&su=Inquiry%20-%20Catalyst%20Biomedicals"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-white hover:text-[#00AEEF] block transition-colors"
                   >
                     sales@catalystbiomedicals.com
+                  </a>
+                  <a
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=catalystbiomedicals@gmail.com&su=Inquiry%20-%20Catalyst%20Biomedicals"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white hover:text-[#00AEEF] block transition-colors"
+                  >
+                    catalystbiomedicals@gmail.com
                   </a>
                 </div>
               </div>
@@ -167,16 +177,6 @@ export default function Footer() {
                 >
                   +91 20-24353999
                 </a>
-              </div>
-
-              <div className="pt-3">
-                <Link
-                  href="/contact-us"
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#00AEEF] hover:underline"
-                >
-                  <span>Request Business Consultation</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
               </div>
             </div>
           </div>

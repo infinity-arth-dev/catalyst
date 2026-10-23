@@ -22,7 +22,7 @@ export default function ProductCategoryCard({ category, index = 0 }: ProductCate
   return (
     <Link
       href={`/products/${category.slug}`}
-      className="group relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-2xs hover:shadow-xl transition-all duration-400 hover:-translate-y-1.5 border border-[#DCE6EE] hover:border-brand-400 h-full"
+      className="group relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-2xs card-lift-glow transition-all duration-400 border border-[#DCE6EE] h-full"
       style={{
         transitionDelay: `${index * 40}ms`,
       }}

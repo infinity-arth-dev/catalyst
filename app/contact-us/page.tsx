@@ -29,30 +29,31 @@ export default function ContactUsPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-brand-950/80 via-brand-950/40 to-brand-950/80 pointer-events-none" />
 
         <Container className="relative h-full flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 z-10 py-8 sm:py-0">
-          <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-2xl border border-white/20 shadow-lg animate-float">
-            <div className="flex items-center gap-2 text-brand-100">
-              <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-accent-600 text-white shadow-2xs">
-                <Mail className="h-4 w-4" />
+          <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full border border-white/20 shadow-lg animate-float">
+            <div className="flex items-center gap-1.5 text-white">
+              <span className="inline-flex h-6 w-6 items-center justify-center rounded-md bg-[#E8502A] text-white shadow-2xs">
+                <Mail className="h-3.5 w-3.5" />
               </span>
-              <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-accent-600 text-white shadow-2xs">
-                <Phone className="h-4 w-4" />
+              <span className="inline-flex h-6 w-6 items-center justify-center rounded-md bg-[#00AEEF] text-white shadow-2xs">
+                <Phone className="h-3.5 w-3.5" />
               </span>
-              <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-accent-600 text-white shadow-2xs">
-                <MapPin className="h-4 w-4" />
+              <span className="inline-flex h-6 w-6 items-center justify-center rounded-md bg-[#E8502A] text-white shadow-2xs">
+                <MapPin className="h-3.5 w-3.5" />
               </span>
             </div>
-            <span className="text-xs font-mono tracking-widest text-brand-100 uppercase pl-1">
+            <span className="text-xs font-mono tracking-widest text-white uppercase pl-1">
               PAN-INDIA SUPPORT &amp; DISTRIBUTION
             </span>
           </div>
 
           <div className="text-left sm:text-right animate-fade-in-down">
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white drop-shadow-md">
-              Contact Us
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight drop-shadow-md">
+              <span className="text-[#00AEEF]">Contact</span>{" "}
+              <span className="text-[#E8502A]">Us</span>
             </h1>
             <div className="mt-3 flex items-center sm:justify-end gap-1.5">
-              <div className="h-1.5 w-16 rounded-full bg-brand-600" />
-              <div className="h-1.5 w-4 rounded-full bg-accent-600" />
+              <div className="h-1.5 w-16 rounded-full bg-[#00AEEF]" />
+              <div className="h-1.5 w-4 rounded-full bg-[#E8502A]" />
             </div>
           </div>
         </Container>

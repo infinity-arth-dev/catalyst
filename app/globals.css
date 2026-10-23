@@ -447,3 +447,148 @@ body {
 .animate-radar-sweep {
   animation: radarSweep 8s linear infinite;
 }
+
+/* ── Rich Visible Biomedical Animations & Glows ── */
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.18);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.14);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
+.animate-heartbeat {
+  animation: heartbeat 1.8s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-text {
+  background-size: 200% auto;
+  animation: gradientShift 4s ease infinite;
+}
+
+@keyframes floatDistinct {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.animate-float-distinct {
+  animation: floatDistinct 4s ease-in-out infinite;
+}
+
+@keyframes floatSway {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-8px) rotate(1.5deg);
+  }
+  66% {
+    transform: translateY(4px) rotate(-1.5deg);
+  }
+}
+
+.animate-float-sway {
+  animation: floatSway 6s ease-in-out infinite;
+}
+
+@keyframes radarSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-radar-spin {
+  animation: radarSpin 14s linear infinite;
+}
+
+@keyframes bioBreathing {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+.animate-bio-breathing {
+  animation: bioBreathing 5s ease-in-out infinite;
+}
+
+@keyframes ecgTravel {
+  0% {
+    stroke-dashoffset: 800;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-ecg-travel {
+  stroke-dasharray: 400;
+  animation: ecgTravel 6s linear infinite;
+}
+
+@keyframes borderGlowPulse {
+  0%, 100% {
+    border-color: rgba(0, 174, 239, 0.3);
+    box-shadow: 0 0 15px rgba(0, 174, 239, 0.15);
+  }
+  50% {
+    border-color: rgba(232, 80, 42, 0.5);
+    box-shadow: 0 0 25px rgba(232, 80, 42, 0.25);
+  }
+}
+
+.animate-border-glow {
+  animation: borderGlowPulse 4s ease-in-out infinite;
+}
+
+/* Luminous Glow Utilities */
+.glow-cyan-lg {
+  box-shadow: 0 12px 36px -6px rgba(0, 174, 239, 0.35), 0 4px 12px rgba(0, 174, 239, 0.2);
+}
+
+.glow-orange-lg {
+  box-shadow: 0 12px 36px -6px rgba(232, 80, 42, 0.35), 0 4px 12px rgba(232, 80, 42, 0.2);
+}
+
+.card-lift-glow {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
+}
+
+.card-lift-glow:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 40px -12px rgba(0, 174, 239, 0.2), 0 8px 18px -6px rgba(232, 80, 42, 0.15);
+  border-color: #00AEEF;
+}

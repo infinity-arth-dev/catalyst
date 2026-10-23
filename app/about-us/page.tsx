@@ -28,22 +28,23 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-brand-950/80 via-brand-950/40 to-brand-950/80 pointer-events-none" />
 
         <Container className="relative h-full flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 z-10 py-8 sm:py-0">
-          <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-2xl border border-white/20 shadow-lg animate-float">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-600/40 text-brand-100 border border-brand-100/30">
-              <ShieldCheck className="w-5 h-5 text-brand-100" />
+          <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full border border-white/20 shadow-lg animate-float">
+            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#00AEEF]/30 text-[#00AEEF] border border-[#00AEEF]/30">
+              <ShieldCheck className="w-4 h-4 text-[#00AEEF]" />
             </div>
-            <span className="text-sm font-semibold tracking-wide text-brand-50">
-              Trusted Healthcare Partnership
+            <span className="text-xs font-mono tracking-widest text-white uppercase">
+              TRUSTED HEALTHCARE PARTNERSHIP
             </span>
           </div>
 
           <div className="text-left sm:text-right animate-fade-in-down">
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white drop-shadow-md">
-              About Us
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight drop-shadow-md">
+              <span className="text-[#00AEEF]">About</span>{" "}
+              <span className="text-[#E8502A]">Us</span>
             </h1>
             <div className="mt-3 flex items-center sm:justify-end gap-1.5">
-              <div className="h-1.5 w-16 rounded-full bg-brand-600" />
-              <div className="h-1.5 w-4 rounded-full bg-accent-600" />
+              <div className="h-1.5 w-16 rounded-full bg-[#00AEEF]" />
+              <div className="h-1.5 w-4 rounded-full bg-[#E8502A]" />
             </div>
           </div>
         </Container>
@@ -81,8 +82,8 @@ export default function AboutPage() {
                     {/* Top Floating Badge with Subtle Float Animation */}
                     <div className="absolute top-4 left-4 z-10 flex items-center gap-2 rounded-full bg-white/95 px-3.5 py-1.5 shadow-md border border-brand-100 backdrop-blur-md animate-float">
                       <span className="relative flex h-2.5 w-2.5">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-600 opacity-75" />
-                        <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-600" />
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00AEEF] opacity-75" />
+                        <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#00AEEF]" />
                       </span>
                       <span className="text-xs font-bold tracking-wide text-brand-900 uppercase">
                         Biomedical Excellence
@@ -98,7 +99,7 @@ export default function AboutPage() {
                         <span className="block text-xs uppercase tracking-wider font-bold text-slate-500">
                           Established
                         </span>
-                        <span className="text-base font-black text-slate-900 leading-tight">
+                        <span className="text-base font-black text-[#00AEEF] leading-tight">
                           Since 2015
                         </span>
                       </div>
@@ -111,23 +112,24 @@ export default function AboutPage() {
             {/* Right Column: Exact text from reference image */}
             <div className="lg:col-span-7 flex flex-col justify-center">
               <AnimatedSection animation="fade-left" delay={150}>
-                <span className="text-xs uppercase font-bold tracking-widest text-accent-600 bg-accent-50 px-3 py-1 rounded-full border border-accent-100">
+                <span className="text-xs uppercase font-extrabold tracking-widest text-[#E8502A] bg-orange-50 px-3 py-1 rounded-full border border-orange-200/80 shadow-xs">
                   Company Overview
                 </span>
 
-                <h2 className="mt-3 text-3xl sm:text-4xl font-black text-brand-600 tracking-tight leading-tight">
-                  Catalyst Biomedicals
+                <h2 className="mt-3 text-3xl sm:text-4xl font-black tracking-tight leading-tight">
+                  <span className="text-[#00AEEF]">Catalyst</span>{" "}
+                  <span className="text-[#E8502A]">Biomedicals</span>
                 </h2>
 
                 {/* Accent divider matching logo palette */}
                 <div className="mt-4 flex items-center gap-1.5">
-                  <div className="h-1.5 w-16 rounded-full bg-brand-600" />
-                  <div className="h-1.5 w-4 rounded-full bg-accent-600" />
+                  <div className="h-1.5 w-16 rounded-full bg-[#00AEEF]" />
+                  <div className="h-1.5 w-4 rounded-full bg-[#E8502A]" />
                 </div>
                 
                 <div className="mt-6 space-y-4">
                   <p className="text-slate-700 leading-relaxed text-sm sm:text-base">
-                    <strong className="text-slate-900 font-bold">Catalyst Biomedicals</strong> was established in 2015, with the view to import and distribute high quality brand name medical related products. Our intention, and ongoing commitment, is to provide the industry with the highest possible level of service, whilst simultaneously, contributing to the building of the integrity of the industry. As the Name &quot;Catalyst&quot; refers to the agents facilitating smooth reactions, We offer a bridge between our customers and innovative products across the globe and help patients.
+                    <strong className="text-brand-800 font-bold">Catalyst Biomedicals</strong> was established in 2015, with the view to import and distribute high quality brand name medical related products. Our intention, and ongoing commitment, is to provide the industry with the highest possible level of service, whilst simultaneously, contributing to the building of the integrity of the industry. As the Name &quot;Catalyst&quot; refers to the agents facilitating smooth reactions, We offer a bridge between our customers and innovative products across the globe and help patients.
                   </p>
 
                   <p className="text-slate-700 leading-relaxed text-sm sm:text-base">
@@ -177,16 +179,17 @@ export default function AboutPage() {
       <section className="relative py-16 sm:py-24 bg-gradient-to-b from-slate-50/80 via-white to-slate-50/60 border-t border-slate-200/70">
         <Container>
           <AnimatedSection animation="fade-up" className="text-center mb-14 sm:mb-16">
-            <span className="text-xs uppercase font-bold tracking-widest text-accent-600 bg-accent-50 px-3.5 py-1.5 rounded-full border border-accent-100">
+            <span className="text-xs uppercase font-extrabold tracking-widest text-[#E8502A] bg-orange-50 px-3.5 py-1.5 rounded-full border border-orange-200/80 shadow-xs">
               Our Core Purpose
             </span>
-            <h2 className="mt-3 text-3xl sm:text-4xl font-black text-brand-600 tracking-tight leading-tight">
-              Vision &amp; Mission
+            <h2 className="mt-3 text-3xl sm:text-4xl font-black tracking-tight leading-tight">
+              <span className="text-[#00AEEF]">Our Vision &amp;</span>{" "}
+              <span className="text-[#E8502A]">Mission</span>
             </h2>
             {/* Centered accent divider matching logo palette */}
             <div className="mt-3.5 flex items-center justify-center gap-1.5">
-              <div className="h-1.5 w-16 rounded-full bg-brand-600" />
-              <div className="h-1.5 w-4 rounded-full bg-accent-600" />
+              <div className="h-1.5 w-16 rounded-full bg-[#00AEEF]" />
+              <div className="h-1.5 w-4 rounded-full bg-[#E8502A]" />
             </div>
           </AnimatedSection>
 

@@ -32,21 +32,22 @@ export default function ContactForm() {
     "w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-800 placeholder:text-slate-400 focus:border-brand-600 focus:outline-none focus:ring-4 focus:ring-brand-100 transition-all duration-300 shadow-2xs";
 
   return (
-    <div className="relative rounded-3xl border border-slate-200/90 bg-white p-7 sm:p-10 shadow-2xl shadow-brand-950/10 overflow-hidden">
+    <div className="relative rounded-3xl border border-slate-200/90 bg-white p-7 sm:p-10 shadow-2xl card-lift-glow overflow-hidden">
       {/* Top dynamic gradient accent line */}
-      <div className="absolute top-0 inset-x-12 h-1.5 rounded-b-full bg-gradient-to-r from-brand-600 via-accent-600 to-brand-600" />
+      <div className="absolute top-0 inset-x-12 h-1.5 rounded-b-full bg-gradient-to-r from-[#00AEEF] via-[#E8502A] to-[#00AEEF]" />
 
       <div className="text-center mb-8">
-        <span className="text-xs uppercase font-bold tracking-widest text-accent-600 bg-accent-50 px-3 py-1 rounded-full border border-accent-100">
+        <span className="text-xs uppercase font-bold tracking-widest text-[#E8502A] bg-orange-50 px-3 py-1 rounded-full border border-orange-200">
           Get In Touch
         </span>
-        <h3 className="text-2xl sm:text-3xl font-black text-brand-600 mt-2">
-          Connect With Us
+        <h3 className="text-2xl sm:text-3xl font-black mt-2">
+          <span className="text-[#00AEEF]">Connect </span>
+          <span className="text-[#E8502A]">With Us</span>
         </h3>
         {/* Centered accent divider */}
         <div className="mt-2.5 flex items-center justify-center gap-1.5">
-          <div className="h-1.5 w-12 rounded-full bg-brand-600" />
-          <div className="h-1.5 w-3 rounded-full bg-accent-600" />
+          <div className="h-1.5 w-12 rounded-full bg-[#00AEEF]" />
+          <div className="h-1.5 w-3 rounded-full bg-[#E8502A]" />
         </div>
       </div>
 

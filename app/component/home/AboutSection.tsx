@@ -48,33 +48,39 @@ export default function AboutSection() {
       {/* ── Section 03: Company Credibility Highlights ── */}
       <Container className="mb-20">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="text-xs uppercase font-extrabold tracking-widest text-brand-600 bg-brand-50 px-4 py-1.5 rounded-full border border-brand-200/80">
+          <span className="text-xs uppercase font-extrabold tracking-widest text-[#00AEEF] bg-[#d8f2fd]/80 px-4 py-1.5 rounded-full border border-[#00AEEF]/40 shadow-xs">
             Healthcare Expertise · Reliable Partnerships
           </span>
-          <h2 className="mt-3.5 text-2xl sm:text-3xl lg:text-4xl font-black text-brand-600 tracking-tight">
-            Built on Scientific Trust &amp; Precision
+          <h2 className="mt-3.5 text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight">
+            <span className="text-[#00AEEF]">Built on Scientific Trust</span>{" "}
+            <span className="text-[#E8502A]">&amp; Precision</span>
           </h2>
           <div className="mt-3 flex items-center justify-center gap-1.5">
-            <div className="h-1.5 w-16 rounded-full bg-brand-600" />
-            <div className="h-1.5 w-4 rounded-full bg-accent-600" />
+            <div className="h-1.5 w-16 rounded-full bg-[#00AEEF]" />
+            <div className="h-1.5 w-4 rounded-full bg-[#E8502A]" />
           </div>
         </div>
 
-        {/* 4 Factual Credibility Cards */}
+        {/* 4 Factual Credibility Cards with Card Lift & Glow Animations */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {credibilityStats.map((stat, idx) => {
             const Icon = stat.icon;
+            const isOrange = idx % 2 === 1;
             return (
               <div
                 key={stat.title}
-                className="group relative rounded-2xl bg-[#F4F7FA] border border-[#DCE6EE] p-6 shadow-2xs hover:bg-white hover:border-brand-500 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300"
+                className="group relative rounded-2xl bg-[#F4F7FA] border border-[#DCE6EE] p-6 shadow-2xs card-lift-glow"
                 style={{ transitionDelay: `${idx * 60}ms` }}
               >
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-3xl sm:text-4xl font-black text-brand-600 tracking-tight group-hover:text-brand-500 transition-colors">
+                  <span className={`text-3xl sm:text-4xl font-black tracking-tight transition-colors ${
+                    isOrange ? "text-[#E8502A] group-hover:text-orange-600" : "text-[#00AEEF] group-hover:text-cyan-600"
+                  }`}>
                     {stat.value}
                   </span>
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white text-brand-600 border border-[#DCE6EE] shadow-2xs group-hover:scale-110 group-hover:bg-brand-600 group-hover:text-white transition-all">
+                  <div className={`flex h-11 w-11 items-center justify-center rounded-xl bg-white border border-[#DCE6EE] shadow-2xs group-hover:scale-110 transition-all ${
+                    isOrange ? "text-[#E8502A] group-hover:bg-[#E8502A] group-hover:text-white" : "text-[#00AEEF] group-hover:bg-[#00AEEF] group-hover:text-white"
+                  }`}>
                     <Icon className="w-5 h-5" />
                   </div>
                 </div>
@@ -85,7 +91,7 @@ export default function AboutSection() {
                   {stat.desc}
                 </p>
                 {/* Bottom accent hover line matching logo palette */}
-                <div className="absolute bottom-0 inset-x-8 h-1 rounded-t-full bg-gradient-to-r from-brand-600 via-accent-600 to-brand-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-0 inset-x-8 h-1 rounded-t-full bg-gradient-to-r from-[#00AEEF] via-[#E8502A] to-[#00AEEF] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             );
           })}
@@ -100,10 +106,10 @@ export default function AboutSection() {
             <AnimatedSection animation="fade-right" className="w-full max-w-md">
               <div className="relative group">
                 {/* Outer decorative halo */}
-                <div className="absolute -inset-2 rounded-3xl bg-gradient-to-tr from-brand-600/20 via-brand-100/30 to-brand-800/20 blur-xl opacity-75 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute -inset-2 rounded-3xl bg-gradient-to-tr from-[#00AEEF]/25 via-brand-100/30 to-[#E8502A]/20 blur-xl opacity-75 group-hover:opacity-100 transition-opacity duration-500" />
 
                 {/* Main Image Frame */}
-                <div className="relative rounded-3xl overflow-hidden border border-[#DCE6EE] bg-white shadow-2xl transition-all duration-500 group-hover:shadow-brand-900/15">
+                <div className="relative rounded-3xl overflow-hidden border border-[#DCE6EE] bg-white shadow-2xl transition-all duration-500 group-hover:border-[#00AEEF]/50">
                   <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
                     <Image
                       src="/images/about-biomedical-team.jpg"
@@ -115,24 +121,24 @@ export default function AboutSection() {
                     <div className="absolute inset-0 bg-gradient-to-t from-brand-950/50 via-transparent to-transparent pointer-events-none" />
                   </div>
 
-                  {/* Floating Established Badge */}
-                  <div className="absolute bottom-4 left-4 z-10 flex items-center gap-3 rounded-2xl bg-white/95 p-3.5 shadow-xl border border-[#DCE6EE] backdrop-blur-md">
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-600 border border-brand-200/50 shadow-2xs">
+                  {/* Floating Established Badge with Distinct Animation */}
+                  <div className="absolute bottom-4 left-4 z-10 flex items-center gap-3 rounded-2xl bg-white/95 p-3.5 shadow-xl border border-[#DCE6EE] backdrop-blur-md animate-bio-breathing">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-[#00AEEF] border border-brand-200/50 shadow-2xs">
                       <Award className="h-6 w-6" />
                     </div>
                     <div>
                       <span className="block text-[11px] uppercase tracking-wider font-extrabold text-slate-500">
                         Established
                       </span>
-                      <span className="text-base font-black text-brand-700 leading-tight">
+                      <span className="text-base font-black text-[#00AEEF] leading-tight">
                         Since 2015
                       </span>
                     </div>
                   </div>
 
                   {/* Floating Top Badge */}
-                  <div className="absolute top-4 right-4 z-10 flex items-center gap-1.5 rounded-full bg-brand-900/90 px-3.5 py-1.5 shadow-lg border border-white/20 text-white backdrop-blur-md text-xs font-bold">
-                    <ShieldCheck className="w-4 h-4 text-brand-600" />
+                  <div className="absolute top-4 right-4 z-10 flex items-center gap-1.5 rounded-full bg-brand-900/90 px-3.5 py-1.5 shadow-lg border border-white/20 text-white backdrop-blur-md text-xs font-bold animate-pulse">
+                    <ShieldCheck className="w-4 h-4 text-[#00AEEF]" />
                     <span>Trusted Quality</span>
                   </div>
                 </div>
@@ -144,20 +150,21 @@ export default function AboutSection() {
           <div className="lg:col-span-7 flex flex-col justify-center">
             <AnimatedSection animation="fade-left" delay={150}>
               {/* Sub-heading badge */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 border border-brand-200/80 text-brand-700 text-xs font-extrabold uppercase tracking-widest mb-3">
-                <Sparkles className="w-3.5 h-3.5 text-accent-600" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200/80 text-[#E8502A] text-xs font-extrabold uppercase tracking-widest mb-3 shadow-xs">
+                <Sparkles className="w-3.5 h-3.5 text-[#E8502A] animate-spin-slow" />
                 <span>Our Heritage &amp; Mission</span>
               </div>
 
-              {/* Title using blue color theme */}
-              <h2 className="text-3xl sm:text-4xl font-black text-brand-600 tracking-tight leading-tight">
-                Connecting Healthcare with Innovation
+              {/* Title using blue & orange logo theme colors (No black) */}
+              <h2 className="text-3xl sm:text-4xl font-black tracking-tight leading-tight">
+                <span className="text-[#00AEEF]">Connecting Healthcare</span>{" "}
+                <span className="text-[#E8502A]">with Innovation</span>
               </h2>
 
               {/* Decorative accent divider matching logo palette */}
               <div className="mt-3.5 flex items-center gap-1.5">
-                <div className="h-1.5 w-16 rounded-full bg-brand-600" />
-                <div className="h-1.5 w-4 rounded-full bg-accent-600" />
+                <div className="h-1.5 w-16 rounded-full bg-[#00AEEF]" />
+                <div className="h-1.5 w-4 rounded-full bg-[#E8502A]" />
               </div>
 
               {/* Content paragraphs */}
