@@ -30,12 +30,12 @@ const serviceIcons = [
 ];
 
 const serviceImages = [
-  "/images/services-banner.jpg",
-  "/images/hero-biomedical-lab.jpg",
-  "/images/vision-biomedical.jpg",
-  "/images/why-choose-us-banner.jpg",
-  "/images/about-biomedical-team.jpg",
-  "/images/mission-healthcare.jpg",
+  "/images/services/service-1-innovative-solutions.jpg",
+  "/images/services/service-2-calibration-testing.jpg",
+  "/images/services/service-3-standby-loaner.jpg",
+  "/images/services/service-4-cold-chain-logistics.jpg",
+  "/images/services/service-5-turnkey-integration.jpg",
+  "/images/services/service-6-patient-care.jpg",
 ];
 
 export default function ServicesSection() {
@@ -157,9 +157,9 @@ export default function ServicesSection() {
                             {item.highlights.slice(0, 2).map((h, i) => (
                               <li
                                 key={i}
-                                className="flex items-start gap-1.5 text-xs font-semibold text-[#00AEEF]"
+                                className="flex items-start gap-1.5 text-xs text-slate-600 font-medium"
                               >
-                                <CheckCircle2 className="w-3.5 h-3.5 text-[#00AEEF] shrink-0 mt-0.5" />
+                                <CheckCircle2 className="w-3.5 h-3.5 text-slate-400 shrink-0 mt-0.5" />
                                 <span className="line-clamp-1">{h}</span>
                               </li>
                             ))}

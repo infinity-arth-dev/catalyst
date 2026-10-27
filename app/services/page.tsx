@@ -1,14 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import Container from "../component/ui/Container";
 import AnimatedSection from "../component/ui/AnimatedSection";
 import ServicesBackgroundAnimation from "../component/home/ServicesBackgroundAnimation";
 import { services } from "../data/services";
 import {
   CheckCircle2,
-  Sparkles,
-  ArrowRight,
   Lightbulb,
   Gauge,
   ShieldAlert,
@@ -104,23 +101,37 @@ export default function ServicesPage() {
                   animation="fade-up"
                   delay={index * 80}
                 >
-                  <div className="group relative flex flex-col text-left rounded-3xl border border-[#DCE6EE] bg-white p-7 sm:p-8 shadow-sm hover:shadow-2xl hover:border-[#00AEEF]/50 transition-all duration-500 hover:-translate-y-2 overflow-hidden h-full justify-between">
+                  <div className="group relative flex flex-col text-left rounded-3xl border border-[#DCE6EE] bg-white p-6 sm:p-7 shadow-sm hover:shadow-2xl hover:border-[#00AEEF]/50 transition-all duration-500 hover:-translate-y-2 overflow-hidden h-full justify-between">
                     {/* Top border glow on hover matching logo */}
-                    <div className="absolute top-0 inset-x-8 h-1.5 rounded-b-full bg-gradient-to-r from-brand-600 via-accent-600 to-brand-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-                    {/* Watermark number */}
-                    <span className="absolute top-5 right-6 text-3xl sm:text-4xl font-black text-slate-100 group-hover:text-[#d8f2fd] transition-colors select-none">
-                      0{index + 1}
-                    </span>
+                    <div className="absolute top-0 inset-x-8 h-1.5 rounded-b-full bg-gradient-to-r from-brand-600 via-accent-600 to-brand-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
 
                     <div>
-                      {/* Icon */}
-                      <div className="relative w-14 h-14 rounded-2xl border border-[#00AEEF]/25 bg-[#d8f2fd]/60 text-[#00AEEF] flex items-center justify-center mb-6 shadow-2xs group-hover:bg-[#00AEEF] group-hover:text-white group-hover:border-[#00AEEF] group-hover:scale-105 transition-all duration-300">
-                        <Icon className="w-7 h-7" />
-                      </div>
+                      {/* Clean Minimal Image Header */}
+                      {service.image && (
+                        <div className="relative w-full h-44 sm:h-48 rounded-2xl overflow-hidden mb-5 border border-slate-100 bg-slate-100">
+                          <Image
+                            src={service.image}
+                            alt={service.title}
+                            fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/35 via-transparent to-transparent pointer-events-none" />
 
-                      {/* Service Title using Blue Color Theme matching logo icon */}
-                      <h3 className="text-lg sm:text-xl font-black text-[#00AEEF] mb-3 group-hover:text-[#00AEEF] transition-colors leading-snug">
+                          {/* Minimal Number Badge */}
+                          <span className="absolute top-3 right-3 text-xs font-mono font-bold px-2.5 py-1 rounded-full bg-white/95 backdrop-blur-md text-slate-700 shadow-xs border border-white/60">
+                            0{index + 1}
+                          </span>
+
+                          {/* Minimal Icon Badge */}
+                          <div className="absolute bottom-3 left-3 w-9 h-9 rounded-xl bg-white/95 backdrop-blur-md text-[#00AEEF] flex items-center justify-center shadow-md border border-white/60 group-hover:bg-[#00AEEF] group-hover:text-white transition-colors duration-300">
+                            <Icon className="w-4.5 h-4.5" />
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Service Title */}
+                      <h3 className="text-lg sm:text-xl font-black text-slate-900 group-hover:text-[#00AEEF] transition-colors leading-snug mb-2.5">
                         {service.title}
                       </h3>
 
@@ -131,10 +142,10 @@ export default function ServicesPage() {
 
                       {/* Highlights */}
                       {service.highlights && service.highlights.length > 0 && (
-                        <div className="mt-5 pt-4 border-t border-slate-100 space-y-2">
+                        <div className="mt-4 pt-4 border-t border-slate-100 space-y-2">
                           {service.highlights.slice(0, 3).map((point) => (
-                            <div key={point} className="flex items-start gap-2 text-xs font-semibold text-[#00AEEF]">
-                              <CheckCircle2 className="w-3.5 h-3.5 text-[#00AEEF] shrink-0 mt-0.5" />
+                            <div key={point} className="flex items-start gap-2 text-xs text-slate-600 font-medium">
+                              <CheckCircle2 className="w-3.5 h-3.5 text-slate-400 shrink-0 mt-0.5" />
                               <span>{point}</span>
                             </div>
                           ))}
@@ -142,15 +153,9 @@ export default function ServicesPage() {
                       )}
                     </div>
 
-                    <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-                      <Link
-                        href="/contact-us"
-                        className="inline-flex items-center gap-1.5 text-xs font-bold text-[#00AEEF] hover:opacity-80 transition-opacity"
-                      >
-                        <span>Enquire Service</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </Link>
-                      <div className="h-1 w-10 rounded-full bg-slate-200 group-hover:w-16 group-hover:bg-gradient-to-r group-hover:from-brand-600 group-hover:to-accent-600 transition-all duration-300" />
+                    {/* Minimal bottom accent indicator */}
+                    <div className="mt-5 pt-3 border-t border-slate-100/80 flex items-center justify-between">
+                      <div className="h-0.5 w-8 rounded-full bg-slate-200 group-hover:w-14 group-hover:bg-slate-300 transition-all duration-300" />
                     </div>
                   </div>
                 </AnimatedSection>
@@ -160,21 +165,21 @@ export default function ServicesPage() {
 
           {/* Quick Pillars Banner */}
           <AnimatedSection animation="fade-up" delay={200} className="mt-16 pt-8 border-t border-slate-200/80 max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
-            <div className="p-5 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:border-brand-400 hover:shadow-md hover:-translate-y-1 transition-all">
-              <span className="block text-2xl font-black text-brand-600">24/7</span>
-              <span className="text-xs font-bold text-brand-800 mt-1 block">Support &amp; Service</span>
+            <div className="p-5 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:border-slate-300 hover:shadow-sm hover:-translate-y-0.5 transition-all">
+              <span className="block text-2xl font-black text-slate-800">24/7</span>
+              <span className="text-xs font-semibold text-slate-600 mt-1 block">Support &amp; Service</span>
             </div>
-            <div className="p-5 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:border-brand-400 hover:shadow-md hover:-translate-y-1 transition-all">
-              <span className="block text-2xl font-black text-brand-600">100%</span>
-              <span className="text-xs font-bold text-brand-800 mt-1 block">Quality Calibration</span>
+            <div className="p-5 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:border-slate-300 hover:shadow-sm hover:-translate-y-0.5 transition-all">
+              <span className="block text-2xl font-black text-slate-800">100%</span>
+              <span className="text-xs font-semibold text-slate-600 mt-1 block">Quality Calibration</span>
             </div>
-            <div className="p-5 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:border-brand-400 hover:shadow-md hover:-translate-y-1 transition-all">
-              <span className="block text-2xl font-black text-brand-600">Pan-India</span>
-              <span className="text-xs font-bold text-brand-800 mt-1 block">Logistics Network</span>
+            <div className="p-5 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:border-slate-300 hover:shadow-sm hover:-translate-y-0.5 transition-all">
+              <span className="block text-2xl font-black text-slate-800">Pan-India</span>
+              <span className="text-xs font-semibold text-slate-600 mt-1 block">Logistics Network</span>
             </div>
-            <div className="p-5 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:border-brand-400 hover:shadow-md hover:-translate-y-1 transition-all">
-              <span className="block text-2xl font-black text-brand-600">Standby</span>
-              <span className="text-xs font-bold text-brand-800 mt-1 block">Loaner Fleet</span>
+            <div className="p-5 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:border-slate-300 hover:shadow-sm hover:-translate-y-0.5 transition-all">
+              <span className="block text-2xl font-black text-slate-800">Standby</span>
+              <span className="text-xs font-semibold text-slate-600 mt-1 block">Loaner Fleet</span>
             </div>
           </AnimatedSection>
         </Container>
