@@ -9,8 +9,8 @@ export const navigation: NavItem[] = [
       { label: "Why Choose Us", href: "/why-choose-us" },
     ],
   },
-  { label: "Services", href: "/services" },
   { label: "Products", href: "/products" },
+  { label: "Services", href: "/services" },
   { label: "Careers", href: "/careers" },
   { label: "Contact Us", href: "/contact-us" },
 ];

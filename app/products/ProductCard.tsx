@@ -59,14 +59,6 @@ export default function ProductCard({ segment }: { segment: ProductCategoryDetai
           </p>
         )}
 
-        {/* Partner count badge */}
-        <div className="mt-4 flex items-center gap-2 text-xs text-slate-500">
-          <span className="inline-flex items-center gap-1.5 bg-brand-50 border border-brand-100 text-brand-700 px-3 py-1 rounded-full font-bold">
-            <span className="h-1.5 w-1.5 rounded-full bg-brand-600" />
-            {segment.items.length} {segment.items.length === 1 ? "Partner" : "Partners"}
-          </span>
-        </div>
-
         {/* CTA */}
         <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
           <span className="text-sm font-bold text-brand-600 group-hover:text-accent-600 transition-colors">

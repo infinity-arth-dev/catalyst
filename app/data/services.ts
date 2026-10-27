@@ -1,68 +1,68 @@
 export const services: Service[] = [
   {
     title: "Innovative Healthcare Solutions",
+    image: "/images/services/service-1-innovative-solutions.jpg",
     description:
-      "Catalyst Biomedicals continuously evaluates and introduces pioneering healthcare technologies on behalf of our hospital partners. We bridge the gap between breakthrough global biomedical manufacturers and domestic clinical requirements. By introducing next-generation 4K surgical visualization towers, minimally invasive arthroscopy systems, advanced RF ablation generators, and targeted oncology therapies, we empower healthcare practitioners with tools that enhance diagnostic accuracy, reduce surgical morbidity, and accelerate patient recovery.",
+      "Bridging global medical innovators with hospital clinical requirements to introduce advanced surgical and diagnostic technologies.",
     highlights: [
-      "Direct partnerships with certified global biomedical innovators (US FDA & CE validated)",
-      "Cutting-edge 4K arthroscopy imaging, RF ablation, and specialty oncology systems",
-      "Regular clinical evaluations and on-site demonstration suites for surgical teams",
-      "Hands-on wet-lab workshops and surgical training demonstrations",
+      "Direct partnerships with certified global biomedical innovators (US FDA & CE)",
+      "Advanced surgical visualization, RF ablation, and specialty oncology systems",
+      "On-site clinical evaluations and demonstration suites for surgical teams",
     ],
   },
   {
     title: "Biomedical Equipment Testing & Calibration",
+    image: "/images/services/service-2-calibration-testing.jpg",
     description:
-      "Our factory-trained biomedical engineers conduct rigorous electrical safety inspections, performance calibration, and preventative maintenance (PM) in compliance with international IEC standards. With dedicated testing facilities and calibrated digital test analyzers, we certify that electrosurgical units, camera processors, light sources, and diagnostic equipment operate at peak manufacturer specifications with zero margin of error.",
+      "Factory-certified performance calibration, electrical safety inspections, and preventive maintenance ensuring zero margin of error.",
     highlights: [
       "Certified biomedical calibration lab with calibrated digital testing analyzers",
-      "Comprehensive electrical safety testing (EST) adhering to IEC clinical standards",
-      "Official calibration reports and preventive maintenance certification for hospital NABH audits",
-      "Precision optical alignment, RF power output verification, and sensor calibration",
+      "Electrical safety testing (EST) strictly adhering to IEC clinical standards",
+      "Official calibration reports and documentation for hospital NABH audits",
     ],
   },
   {
     title: "Standby Emergency Loaner Fleet",
+    image: "/images/services/service-3-standby-loaner.jpg",
     description:
-      "To safeguard hospital operating theaters and surgical centers from costly downtime during repairs, Catalyst Biomedicals maintains an active fleet of certified backup loaner systems. When surgical consoles, camera heads, light sources, or compression pumps need service, our logistics team deploys standby units immediately, ensuring zero disruption to scheduled procedures.",
+      "Active fleet of pre-calibrated backup loaner systems deployed immediately during servicing to prevent operating room downtime.",
     highlights: [
-      "Immediate standby loaner units to guarantee zero operating theater downtime",
-      "Fleet covers arthroscopy consoles, 4K camera heads, RF generators, and DVT pumps",
-      "Pre-tested, calibrated, and sterilized loaners ready for immediate OR deployment",
-      "Hassle-free equipment exchange handled directly by our field biomedical engineers",
+      "Immediate standby loaner dispatch guaranteeing zero procedural downtime",
+      "Covers arthroscopy consoles, 4K camera heads, RF generators, and DVT pumps",
+      "Sterilized, hospital-ready units with direct biomedical engineer exchange",
     ],
   },
   {
     title: "Pan-India Logistics & Cold-Chain Distribution",
+    image: "/images/services/service-4-cold-chain-logistics.jpg",
     description:
-      "Headquartered in Pune with strategic regional hubs in Nashik, Kolhapur, and Solapur, our supply chain guarantees round-the-clock emergency fulfillment across India. We manage climate-controlled storage for sensitive consumables, maintain strict batch traceability, and follow validated transport protocols ensuring sterile implants and critical instruments reach hospital suites on time.",
+      "Round-the-clock emergency order fulfillment and temperature-controlled storage backed by strategic regional hubs.",
     highlights: [
       "Strategic regional response hubs in Pune, Nashik, Kolhapur, and Solapur",
-      "Pan-India distribution network with round-the-clock 24/7 emergency dispatch",
+      "24/7 pan-India emergency dispatch for critical surgical consumables",
       "Regulated warehousing with barcode lot tracking and cold-chain integrity",
-      "Same-day emergency dispatch for critical surgical consumables and implants",
     ],
   },
   {
     title: "OT & Hospital Turnkey Equipment Integration",
+    image: "/images/services/service-5-turnkey-integration.jpg",
     description:
-      "We assist hospitals and healthcare institutions in planning, procuring, and integrating complete operating room suites. From ergonomic ceiling pendants and surgical monitor articulation to multi-device routing (arthroscopy, laparoscopy, and fluoroscopy), our technical specialists ensure seamless hardware interoperability and safe clinical workflows.",
+      "End-to-end planning, procurement, and integration of operating rooms for seamless multi-device surgical workflows.",
     highlights: [
-      "Complete surgical suite layout consultation and ergonomic equipment positioning",
-      "Multi-vendor device integration, HD/4K video routing, and central console management",
-      "Pre-commissioning validation and comprehensive electrical/environmental testing",
-      "Hands-on orientation for surgeons, scrub nurses, and hospital biomedical teams",
+      "Operating room layout consultation and ergonomic equipment positioning",
+      "Multi-device HD/4K video routing and central console management",
+      "Electrical and environmental pre-commissioning validation and staff training",
     ],
   },
   {
     title: "Preventative Maintenance (AMC/CMC) & Patient Care",
+    image: "/images/services/service-6-patient-care.jpg",
     description:
-      "We offer tailored Annual Maintenance Contracts (AMC) and Comprehensive Maintenance Contracts (CMC) to protect hospital capital investments. Complementing this, our patient care counseling team supports complex therapeutic regimes, including post-operative Deep Vein Thrombosis (DVT) prophylaxis adherence, patient education, and home therapy coordination to reduce hospital readmissions.",
+      "Tailored equipment maintenance contracts combined with dedicated patient counseling to support therapeutic adherence.",
     highlights: [
-      "Customized AMC & CMC contracts with scheduled quarterly preventive maintenance visits",
-      "24/7 priority emergency engineer dispatch with guaranteed response time SLAs",
+      "Custom AMC & CMC contracts with scheduled quarterly preventive maintenance",
+      "24/7 priority emergency engineer dispatch with guaranteed response SLAs",
       "Specialized patient counseling teams for post-op DVT compression adherence",
-      "Close clinician and caregiver follow-up to optimize patient recovery outcomes",
     ],
   },
 ];

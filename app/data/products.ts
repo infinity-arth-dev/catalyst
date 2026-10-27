@@ -29,14 +29,14 @@ export interface ProductCategoryDetail {
 }
 
 export const productCategories: ProductCategory[] = [
-  { slug: "orthopedics", name: "Orthopedics", image: "/products/orthopedics/Orthopedics.jpg" },
-  { slug: "neurology", name: "Neurology", image: "/products/neurology/Neurology.jpg" },
-  { slug: "ophthalmology", name: "Ophthalmology", image: "/products/ophthalmology/Ophthalmology.jpg" },
-  { slug: "dental", name: "Dental", image: "/products/dental/Dental.jpg" },
-  { slug: "ent", name: "ENT", image: "/products/ent/ENT.jpg" },
-  { slug: "dvt", name: "DVT", image: "/products/dvt/DVT.jpg" },
-  { slug: "onco", name: "Onco", image: "/products/onco/onco.jpg" },
-  { slug: "hospital-supply", name: "Hospital Supply", image: "/products/hospital-supply/Hospital-Supply.jpg" },
+  { slug: "orthopedics", name: "Orthopedics", image: "/products/orthopedics/orthopedics-main.jpg" },
+  { slug: "neurology", name: "Neurology", image: "/products/neurology/neurology-main.jpg" },
+  { slug: "ophthalmology", name: "Ophthalmology", image: "/products/ophthalmology/ophthalmology-main.jpg" },
+  { slug: "dental", name: "Dental", image: "/products/dental/dental-main.jpg" },
+  { slug: "ent", name: "ENT", image: "/products/ent/ent-main.jpg" },
+  { slug: "dvt", name: "DVT", image: "/products/dvt/dvt-main.jpg" },
+  { slug: "onco", name: "Onco", image: "/products/onco/onco-main.jpg" },
+  { slug: "hospital-supply", name: "Hospital Supply", image: "/products/hospital-supply/hospital-supply-main.jpg" },
 ];
 
 export const PRODUCT_SEGMENTS: ProductCategoryDetail[] = [
@@ -44,7 +44,7 @@ export const PRODUCT_SEGMENTS: ProductCategoryDetail[] = [
     id: "orthopedics",
     name: "Orthopedics",
     slug: "orthopedics",
-    image: "/products/orthopedics/Orthopedics.jpg",
+    image: "/products/orthopedics/orthopedics-main.jpg",
     heroImage: "/products/orthopedics/orthopedics-hero.jpg",
     tagline: "Advanced Arthroscopy & Joint Replacement Solutions",
     summary:
@@ -145,7 +145,7 @@ export const PRODUCT_SEGMENTS: ProductCategoryDetail[] = [
     id: "neurology",
     name: "Neurology",
     slug: "neurology",
-    image: "/products/neurology/Neurology.jpg",
+    image: "/products/neurology/neurology-main.jpg",
     heroImage: "/products/neurology/neurology-hero.jpg",
     tagline: "Neuromodulation & Neurotherapy Solutions",
     summary:
@@ -275,7 +275,7 @@ export const PRODUCT_SEGMENTS: ProductCategoryDetail[] = [
     id: "ophthalmology",
     name: "Ophthalmology",
     slug: "ophthalmology",
-    image: "/products/ophthalmology/Ophthalmology.jpg",
+    image: "/products/ophthalmology/ophthalmology-main.jpg",
     heroImage: "/products/ophthalmology/ophthalmology-hero.jpg",
     tagline: "Premium Intraocular Lens Solutions",
     summary:
@@ -369,7 +369,7 @@ export const PRODUCT_SEGMENTS: ProductCategoryDetail[] = [
     id: "dental",
     name: "Dental Segment",
     slug: "dental",
-    image: "/products/dental/Dental.jpg",
+    image: "/products/dental/dental-main.jpg",
     heroImage: "/products/dental/dental-hero.jpg",
     tagline: "Complete Dental Implant & Restoration Solutions",
     summary:
@@ -465,7 +465,7 @@ export const PRODUCT_SEGMENTS: ProductCategoryDetail[] = [
     id: "ent",
     name: "ENT",
     slug: "ent",
-    image: "/products/ent/ENT.jpg",
+    image: "/products/ent/ent-main.jpg",
     heroImage: "/products/ent/ent-hero.jpg",
     tagline: "Advanced Coblation Technology for ENT",
     summary:
@@ -519,7 +519,7 @@ export const PRODUCT_SEGMENTS: ProductCategoryDetail[] = [
     id: "dvt",
     name: "DVT management",
     slug: "dvt",
-    image: "/products/dvt/DVT.jpg",
+    image: "/products/dvt/dvt-main.jpg",
     heroImage: "/products/dvt/dvt-hero.jpg",
     tagline: "Prevention of Deep Vein Thrombosis",
     summary:
@@ -573,7 +573,7 @@ export const PRODUCT_SEGMENTS: ProductCategoryDetail[] = [
     id: "hospital-supply",
     name: "Hospital Supply",
     slug: "hospital-supply",
-    image: "/products/hospital-supply/Hospital-Supply.jpg",
+    image: "/products/hospital-supply/hospital-supply-main.jpg",
     heroImage: "/products/hospital-supply/hospital-supply-hero.jpg",
     tagline: "Essential Hospital Consumables",
     summary:
@@ -626,7 +626,7 @@ export const PRODUCT_SEGMENTS: ProductCategoryDetail[] = [
     id: "onco",
     name: "Onco",
     slug: "onco",
-    image: "/products/onco/onco.jpg",
+    image: "/products/onco/onco-main.jpg",
     heroImage: "/products/onco/onco-hero.jpg",
     tagline: "Innovative Oncology Treatment Solutions",
     summary:

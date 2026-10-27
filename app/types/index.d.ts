@@ -14,4 +14,5 @@ interface Service {
   title: string;
   description: string;
   highlights?: string[];
+  image?: string;
 }
